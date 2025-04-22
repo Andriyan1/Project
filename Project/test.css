@@ -1,0 +1,373 @@
+.sidebar {
+    max-width: 250px;
+    background-color: #2c3e50;
+    font-family: 'Poppins', sans-serif;
+    z-index: 1;
+    /* Keep original sidebar below */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    /* 100% висоти вікна */
+    background-color: #121a26;
+    padding: 20px;
+    animation: slideIn 0.5s ease forwards;
+    transform: translateX(-100%);
+    opacity: 0;
+    top: 0;
+    left: 0;
+    background: linear-gradient(180deg, #0a1128, #005577);
+    color: white;
+    position: fixed;
+    overflow-y: auto;
+    /* дозволяє скроллити по вертикалі */
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE 10+ */
+  }
+  .sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    margin-top: -60vh;
+  }
+  .main-content {
+    /* Відступ для того, щоб основний контент не перекривав сайдбар */
+    padding: 20px;
+    margin-right: 0;
+    transition: 0.3s ease-in-out;
+    margin-left: 250px;
+    width: calc(100% - 250px);
+    /* Залишок екрану для контенту */
+  }
+/* .user-panel {
+    background-color: #1f2b3d;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 25px;
+    display: none;
+    margin-bottom: 50vh;
+  
+  } */
+  
+  .user-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .wallet-info {
+    margin-top: 15px;
+  }
+  
+  .wallet-info p {
+    font-size: 14px;
+    color: #ddd;
+  }
+  
+  .user-actions {
+    margin-top: 20px;
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .user-actions li {
+    margin: 5px 0;
+  }
+  
+  .user-actions li a {
+    color: #b4c6e8;
+    text-decoration: none;
+  }
+  
+  .user-actions li a:hover {
+    text-decoration: underline;
+  }
+
+  .sidebar-inner-button {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    margin: 5px 0;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #b0b0b0;
+    /* сіріший відтінок */
+    background-color: transparent;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+    display: flex;
+  
+  }
+  
+  .sidebar-inner-button:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #ffffff;
+  }
+  
+  .fa-solid {
+    padding-right: 5%;
+  }
+  
+  .sidebar-inner {
+    margin-bottom: 15%;
+  }
+  @media (max-width: 1024px) {
+    .sidebar {
+      width: 120px;
+      /* Задаємо ширину сайдбару на мобільних */
+      height: 100vh;
+      /* Висота сайдбару на мобільних пристроях буде 100% */
+      padding: 10px !important;
+    }
+    .sidebar-nav {
+      /* display: flex;
+      flex-direction: column;
+  
+    }
+  
+    .main-content {
+      margin-left: 120px;
+      padding: 15px;
+      width: calc(100% - 120px);
+    }
+  
+    .logo-icon {
+    width: 25px !important;
+    height: 25px !important;
+    margin-top: 3%;
+    object-fit: contain;
+    border-radius: 25%;
+    }
+  
+    .brand {
+      font-size: 7px;
+    }
+  
+    .dot {font-size: 7px;}
+  
+    .invest {font-size: 7px;}
+  
+    .link {
+    font-size: 6px !important;
+    }
+  .user-panel {
+    height: 180px;
+    padding: 15px 0px 0px 10px !important;
+  }
+   .fa-user-circle {
+   font-size: 17px !important;
+  }
+    .user-info  {
+      font-size: 7px;
+      flex-direction: row;
+      align-items: flex-start;
+    }
+    #balance {
+      font-size: 8px !important;
+      padding: 0% !important;
+    }
+    strong {
+      font-size: 10px !important;
+      padding: 0% !important;
+    }
+    .sidebar-inner-button {
+      font-size: 8px !important;
+      padding: 0% !important;
+  
+    }
+    .nav-item {
+      font-weight: 150px !important;
+      font-size: 12px !important;
+      margin-top: 5px !important;
+      margin-bottom: 5px !important;
+    }
+  
+  .share   {
+    height: calc(100% + 200px) !important;
+    margin-top: 40%;
+    gap: 1px !important;
+    display: block !important;
+  }
+  .share p {
+    font-size: 10px !important;
+  }
+  .share-icons .fa-telegram,
+  .share-icons .fa-youtube,
+  .share-icons .fa-whatsapp{
+  
+  
+  
+    font-size: 10px !important;
+  }
+  
+    .hero-images img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 15px;
+    } */
+  
+  /* 🔥 Адаптація для планшетів і мобілок (до 768px) */
+@media (max-width: 768px) {
+    .sidebar {
+      width: 180px;
+      /* Задаємо ширину сайдбару на мобільних */
+      height: 100vh;
+      /* Висота сайдбару на мобільних пристроях буде 100% */
+      /* padding: 15px;/
+    }
+  
+    .main-content {
+      margin-left: 180px;
+      padding: 15px;
+      width: calc(100% - 180px);
+    }
+  
+    .logo-icon {
+    width: 40px !important;
+    height: 40px !important;
+    margin-top: 3%;
+    object-fit: contain;
+    border-radius: 25%;
+    }
+    .brand {
+      font-size: 10px;
+    }
+  
+    .dot {font-size: 10px;}
+  
+    .invest {font-size: 10px;}
+  
+    .link {
+    font-size: 10px !important;
+    }
+  
+    .user-info {
+      gap: 6px;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .nav-item {
+      font-weight: 300px !important;
+      font-size: 16px !important;
+      margin-top: 10px !important;
+      margin-bottom: 5px !important;
+    }
+  
+  
+    .hero-images img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 15px;
+    }
+  
+  } */
+  
+}
+  /* 📱 Адаптація для дуже малих екранів (до 480px) */
+  @media (max-width: 480px) {
+    .sidebar {
+      width: 120px;
+      /* Задаємо ширину сайдбару на мобільних */
+      height: 100vh;
+      /* Висота сайдбару на мобільних пристроях буде 100% */
+      padding: 15px;/
+    }
+    .sidebar-nav {
+      display: flex;
+      flex-direction: column;
+      margin-top: -62vh !important;
+    }
+  
+    .main-content {
+      margin-left: 120px;
+      padding: 15px;
+      width: calc(100% - 120px);
+    }
+  
+    .logo-icon {
+    width: 25px !important;
+    height: 25px !important;
+    margin-top: 3%;
+    object-fit: contain;
+    border-radius: 25%;
+    }
+  
+    .brand {
+      font-size: 7px;
+    }
+  
+    .dot {font-size: 7px;}
+  
+    .invest {font-size: 7px;}
+  
+    .link {
+    font-size: 6px !important;
+    }
+  .user-panel {
+    height: 180px;
+    padding: 15px 0px 0px 10px !important;
+  }
+   .fa-user-circle {
+   font-size: 15px !important;
+  }
+    .user-info  {
+      font-size: 7px;
+      flex-direction: row;
+      align-items: flex-start;
+    }
+    #balance {
+      font-size: 8px !important;
+      padding: 0% !important;
+    }
+    strong {
+      font-size: 10px !important;
+      padding: 0% !important;
+    }
+    .sidebar-inner-button {
+      font-size: 8px !important;
+      padding: 0% !important;
+  
+    }
+    .nav-item {
+      font-weight: 150px !important;
+      font-size: 10px !important;
+      margin-top: 5px !important;
+      margin-bottom: 5px !important;
+    }
+  
+  .share   {
+    height: calc(100% + 200px) !important;
+    margin-top: 100%;
+    gap: 1px !important;
+    display: block !important;
+  }
+  .share p {
+    font-size: 10px !important;
+  }
+  .share-icons .fa-telegram,
+  .share-icons .fa-youtube,
+  .share-icons .fa-whatsapp{
+  
+  
+  
+    font-size: 10px !important;
+  }
+  
+    .hero-images img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 15px;
+    }
+  
+}
