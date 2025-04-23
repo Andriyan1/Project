@@ -85,21 +85,21 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'Home', 'Home.html'));  
 });
 
-// app.get('/', (req, res) => {
-//   const token = req.cookies.userToken;
+app.get('/', (req, res) => {
+  const token = req.cookies.userToken;
 
-//   if (!token) {
-//     return res.redirect('/login');
-//   }
+  if (!token) {
+    return res.redirect('/login');
+  }
 
-//   jwt.verify(token, 'secretKey', (err, decoded) => {
-//     if (err) {
-//       return res.redirect('/login');
-//     }
+  jwt.verify(token, 'secretKey', (err, decoded) => {
+    if (err) {
+      return res.redirect('/login');
+    }
 
-//     res.sendFile(path.join(__dirname, 'Home', 'Home.html'));
-//   });
-// });
+    res.sendFile(path.join(__dirname, 'Home', 'Home.html'));
+  });
+});
 app.get('/Pass', (req, res) => {
   res.sendFile(path.join(__dirname, 'Password', 'Forgot-Password.html'));
 });
