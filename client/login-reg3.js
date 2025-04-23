@@ -301,7 +301,10 @@ document.getElementById('login-form').addEventListener('submit', function(event)
     if (data.message === 'Успішний логін') {
       if (data.token) {
         document.cookie = `userToken=${data.token}; path=/; max-age=3600`;
+        const nickname = generateNickname(email); // ← ТУТ створюється nickname
+        localStorage.setItem('nickname', nickname); 
       }
+
       showMessage('Успішний логін!', 'success');
       setTimeout(() => {
         window.location.href = '/';  // Перехід на головну
@@ -325,6 +328,10 @@ function showMessage(message, type) {
     messageBox.style.display = 'none';
   }, 5000);
 }
+const generateNickname = email =>
+  email ? email.split('@')[0].slice(0, 6).toUpperCase() : '';
+
+
 
 
 

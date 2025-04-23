@@ -8,6 +8,26 @@ function checkUserPanelVisibility() {
   }
 }
 
+function showUserGreeting() {
+  const userElement = document.getElementById('user');
+  const tokenCookie = document.cookie
+    .split('; ')
+    .find(row => row.startsWith('userToken='));
+  const token = tokenCookie ? tokenCookie.split('=')[1] : null;
+
+  if (userElement) {
+    if (token) {
+      const nickname = localStorage.getItem('nickname');
+      userElement.textContent = nickname
+        ? `Привіт, ${nickname}!`
+        : 'Привіт, користувачу!';
+    } else {
+      userElement.textContent = 'Привіт, гість!';
+    }
+  }
+}
+document.addEventListener('DOMContentLoaded', showUserGreeting);
+
 
 document.addEventListener('DOMContentLoaded', function() {
   const token = getCookie('userToken');

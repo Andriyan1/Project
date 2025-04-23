@@ -159,7 +159,11 @@ app.post('/login', (req, res) => {
         sameSite: 'Lax',
       });
 
-      res.status(200).json({ message: 'Успішний логін' });
+      res.status(200).json({ 
+        message: 'Успішний логін',
+        token: token // ✅ додаємо токен у відповідь
+      });
+      
       
 
     });
