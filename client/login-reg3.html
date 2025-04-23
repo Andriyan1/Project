@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login & Register | HAHM</title>
+  <link rel="stylesheet" href="./login-reg3.css" />
+  <!-- Підключення через CDN Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <!-- Topbar -->
+  <header class="topbar">
+    <button id="back-btn" class="back-btn">
+      <i class="fa fa-arrow-left"></i> Back
+    </button>
+  </header>
+
+  <!-- Main Content -->
+  <section class="auth-container">
+    <div class="auth-box">
+      <!-- Title for Login and Register Form -->
+      <h2 id="form-title">Welcome Back!</h2>
+      <p id="form-description">Enter your username and password to continue.</p>
+
+      <!-- Login Form -->
+      <form id="login-form" class="auth-form">
+        <div class="input-group">
+          
+          <input type="email" id="login-email" placeholder="Email" required />
+        </div>
+        <span id="message" style="display: none; color: red;"></span>
+
+        <div class="input-group">
+          <input type="password" id="login-password" placeholder="Password" required />
+          
+        </div>
+        <button type="submit" class="auth-btn" id="loginBtn">Sign In</button>
+        <div class="toggle-form">
+          <a onclick="window.location.href='/Pass'" id="forgot-password">Forgot Password?</a>
+          <p>Don't have an account? <a href="#" id="switch-to-register">Create one!</a></p>
+        </div>
+      </form>
+
+      <!-- Register Form -->
+      <!-- Register Form -->
+<form id="register-form" class="auth-form" style="display: none;">       
+  <div class="input-group">
+    <input type="email" id="register-email" placeholder="Please Enter Email" required />
+    <span id="email-error" class="error-message"></span>
+  </div>
+
+  <div class="input-group">
+    <input type="text" id="verification-code" placeholder="Verification Code" required />
+    <button type="button" class="send-code-btn">Send Code</button>
+    <div class="input-group" id="verify-code-group" style="display: none;">
+      <button type="button" class="verify-code-btn">Verify Code</button>
+      <div id="registration-message" style="display: none;"></div>
+      <div id="verification-message"></div>
+    </div>
+  </div>
+
+  <!-- Add ID for password group to show after verification -->
+  <!-- Блоки, що будуть приховані до верифікації -->
+<div class="input-group" id="password-group" style="display: none;">
+  <input type="password" id="register-password" placeholder="Please Enter New Password" required />
+  >
+  <small>Password should contain 8 characters with at least one uppercase letter</small>
+  <div id="password-error" class="error-message"></div>
+</div>
+
+<div class="input-group" id="confirm-password-group" style="display: none;">
+  <input type="password" id="confirm-password" placeholder="Confirm Password" required />
+  
+  <div id="confirm-password-error" class="error-message"></div>
+</div>
+
+<div class="input-group" id="mobile-group" style="display: none;">
+  
+</div>
+
+<div class="input-group" id="invitation-code-group" style="display: none;">
+  <input type="text" id="invitation-code" placeholder="Invitation Code" />
+</div>
+
+<div class="agreement" id="agreement-group" style="display: none;">
+  <p>By Signing Up, you affirm that you have reviewed and agree to our <a href="#">Privacy Policy</a>.</p>
+</div>
+
+<div class="button-container" id="button-container" style="display: none;">
+  <button type="submit" class="auth-btn">Create An Account</button>
+</div>
+
+</form>
+
+    </div>
+  </section>
+  <script type="module" src="login-reg3.js"></script> <!-- Підключення вашого JavaScript файлу -->
+
+
+</body>
+</html>
