@@ -3,7 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: "Segoe UI", sans-serif;
 }
 
 body {
@@ -17,7 +17,7 @@ body {
   padding: 20px;
 }
 a {
-  cursor: pointer;  /* Задає курсор "рука" при наведенні */
+  cursor: pointer; /* Задає курсор "рука" при наведенні */
 }
 #message {
   display: none;
@@ -63,7 +63,8 @@ a {
   flex-direction: column;
   width: 100%;
   max-width: 550px;
-  background: url(./img/photo_2025-04-09_17-31-46.jpg) no-repeat center center fixed;
+  background: url(./img/photo_2025-04-09_17-31-46.jpg) no-repeat center center
+    fixed;
   background-size: cover;
   padding: 40px;
   border-radius: 10px;
@@ -116,7 +117,7 @@ a {
 .auth-form input[type="password"] {
   padding-right: 40px;
 }
-.send-code-btn{
+.send-code-btn {
   position: absolute;
   right: 12px;
   top: 50%;
@@ -129,7 +130,8 @@ a {
   font-size: 14px;
   cursor: pointer;
 }
-.verify-code-btn, .auth_btn {
+.verify-code-btn,
+.auth_btn {
   position: absolute;
   right: 12px;
   top: 50%;
@@ -186,21 +188,21 @@ a {
 /* Адаптивність для мобільних пристроїв */
 @media (max-width: 600px) {
   .auth-container {
-      padding: 20px;
-      width: 100%;
+    padding: 20px;
+    width: 100%;
   }
 
   h2 {
-      font-size: 24px;
+    font-size: 24px;
   }
 
   .auth-form input {
-      font-size: 14px;
+    font-size: 14px;
   }
 
   .auth-btn {
-      font-size: 12px;
-      padding: 10px 20px;
+    font-size: 12px;
+    padding: 10px 20px;
   }
 }
 
