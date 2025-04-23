@@ -83,6 +83,25 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "Home", "Home.html"));
 });
 
+
+app.get('/', (req, res) => {
+  const token = req.cookies.userToken;
+
+  if (!token) {
+    return res.redirect('/login');
+  }
+
+  jwt.verify(token, 'secretKey', (err, decoded) => {
+    if (err) {
+      return res.redirect('/login');
+    }
+
+    res.sendFile(path.join(__dirname, 'Home', 'Home.html'));
+  });
+});
+app.get('/Pass', (req, res) => {
+  res.sendFile(path.join(__dirname, 'Password', 'Forgot-Password.html'));
+
 app.get("/", (req, res) => {
   const token = req.cookies.userToken;
 
@@ -97,6 +116,7 @@ app.get("/", (req, res) => {
 
     res.sendFile(path.join(__dirname, "Home", "Home.html"));
   });
+
 });
 app.get("/Pass", (req, res) => {
   res.sendFile(path.join(__dirname, "Password", "Forgot-Password.html"));
@@ -698,4 +718,5 @@ app.post("/update-password", (req, res) => {
 // Стартуємо сервер
 https.createServer(credentials, app).listen(3000, () => {
   console.log("HTTPS сервер працює на https://localhost:3000");
+});
 });
