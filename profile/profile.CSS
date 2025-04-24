@@ -1,11 +1,11 @@
 body {
   background-color: #1a1a1a;
-  color: #ffffff;
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 20px;
-  background: linear-gradient(to right, #8e2de2, #4a00e0, #00c6ff);
+  background: linear-gradient(135deg, #24314f, #1151b9, #2559a2);
 }
+
 .container {
   display: flex;
   flex-direction: column;
@@ -37,12 +37,12 @@ body {
   border-radius: 10px;
   padding: 15px;
   flex: 1;
-  background: linear-gradient(to right, #3a0c62, #25095c, #32bce3);
+  background: linear-gradient(to right, #013191, #2e1464, #2f65fb);
 }
 .main-section {
   flex: 0 0 70%;
   min-height: 200px;
-  background: linear-gradient(to right, #32bce3, #25095c, #3a0c62);
+  background: linear-gradient(to right, #2f65fb, #2e1464, #013191);
 }
 .profile-pic {
   width: 80px;
@@ -59,12 +59,16 @@ body {
   line-height: 1.5;
 }
 .info-row span:first-child {
-  color: #4208ff;
+  color: #f2ca04; /* Зелений колір для лівого тексту */
   font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(255, 215, 0, 0.5),
+    0 0 5px rgba(255, 215, 0, 0.3), 0 0 10px rgba(255, 215, 0, 0.2); /* Додаткове світіння */
 }
 .info-row span:last-child {
-  color: #4208ff;
+  color: #f2ca04; /* Білий колір для правого тексту */
   font-weight: 500;
+  text-shadow: 1px 1px 2px rgba(255, 215, 0, 0.5),
+    0 0 5px rgba(255, 215, 0, 0.3), 0 0 10px rgba(255, 215, 0, 0.2); /* Додаткове світіння */
 }
 
 .password-section {
@@ -104,6 +108,10 @@ body {
   display: flex;
   justify-content: space-between;
   margin-bottom: 10px;
+  color: #f2ca04; /* Білий колір для правого тексту */
+  font-weight: 500;
+  text-shadow: 1px 1px 2px rgba(255, 215, 0, 0.5),
+    0 0 5px rgba(255, 215, 0, 0.3), 0 0 10px rgba(255, 215, 0, 0.2);
 }
 .team {
   display: flex;
