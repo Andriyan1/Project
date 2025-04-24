@@ -25,9 +25,16 @@
       <div class="logo">
         <div class="sidebar-wrapper">
           <div class="logo-container">
-            <img src="img/photo_2025-04-11_23-16-24.jpg" class="logo-icon" alt="logo" />
+            <img
+              src="img/photo_2025-04-11_23-16-24.jpg"
+              class="logo-icon"
+              alt="logo"
+            />
             <div class="logo-text">
-              <h1><span class="brand">MANA</span><span class="dot">.</span><span class="invest">invest</span></h1>
+              <h1>
+                <span class="brand">MANA</span><span class="dot">.</span
+                ><span class="invest">invest</span>
+              </h1>
               <p class="link">WWW.MANA.WORLD</p>
             </div>
           </div>
@@ -36,8 +43,8 @@
 
       <div class="user-panel">
         <div class="user-info">
-          <i class='far fa-user-circle'></i>
-          
+          <i class="far fa-user-circle"></i>
+
           <p id="user"></p>
         </div>
 
@@ -46,20 +53,28 @@
         </div>
 
         <div class="sidebar-inner">
-          <div class="sidebar-inner-button"><i class="fa-solid fa-money-bill-transfer"></i>Deposit</div>
-          <div class="sidebar-inner-button"><i class="fa-solid fa-wallet"></i>Withdraw</div>
-          <div class="sidebar-inner-button"><i class="fa-solid fa-file"></i>View Transactions</div>
+          <div class="sidebar-inner-button">
+            <i class="fa-solid fa-money-bill-transfer"></i>Deposit
+          </div>
+          <div class="sidebar-inner-button">
+            <i class="fa-solid fa-wallet"></i>Withdraw
+          </div>
+          <div class="sidebar-inner-button">
+            <i class="fa-solid fa-file"></i>View Transactions
+          </div>
           <div class="sidebar-inner-button">Profile Settings</div>
         </div>
       </div>
 
-      <br><br><br>
+      <br /><br /><br />
 
       <nav class="sidebar-nav">
         <a onclick="window.location.href='/'" class="nav-item">🏠 Home</a>
         <a onclick="window.location.href='/help'" class="nav-item">👥 Team</a>
         <a onclick="window.location.href='/help'" class="nav-item">🎧 Online</a>
-        <a onclick="window.location.href='/about'" class="nav-item">ℹ About Us</a>
+        <a onclick="window.location.href='/about'" class="nav-item"
+          >ℹ About Us</a
+        >
         <a onclick="window.location.href='/help'" class="nav-item">✉ Help</a>
       </nav>
 
@@ -76,13 +91,15 @@
     <main class="main-content">
       <!-- Top bar with login button -->
       <div class="topbar">
-        <a class="login-btn" onclick="window.location.href='/login'">LOGIN / REGISTER</a>
+        <a class="login-btn" onclick="window.location.href='/login'"
+          >LOGIN / REGISTER</a
+        >
       </div>
 
       <!-- Hero Section -->
       <section class="hero">
         <div class="hero-images">
-          <img src="img/DASHBOARD-BANNER_1.jpg" alt="Person 1" />
+          <img src="img/baner1.jpg" alt="Person 1" />
         </div>
         <div class="hero-text"></div>
       </section>
@@ -102,13 +119,46 @@
       </div>
 
       <!-- Agent Category Section -->
-      <section class="agent-category">
-        <h2>AGENT CATEGORY</h2>
+      <div class="agent-category-container">
+        <div class="agent-category-text">
+          AGENT CATEGORY
+        </div>
+      </div>
+        <div class="agent-container">
+          <div class="agent">
+            <img src="img/Silver.jpg" alt="Agent 1" />
+            <ul>
+              <li>Silver</li>
+              <li>Потреби:</li>
+            </ul>
+          </div>
+          <div class="agent">
+            <img src="img/Gold.jpg" alt="Agent 2" />
+            <ul>
+              <li>Gold</li>
+              <li>Потреби:</li>
+            </ul>
+          </div>
+          <div class="agent">
+            <img src="img/Corona.jpg" alt="Agent 3" />
+            <ul>
+              <li>Corona</li>
+              <li>Потреби:</li>
+            </ul>
+          </div>
+          <div class="agent">
+            <img src="img/diamond.jpg" alt="Agent 4" />
+            <ul>
+              <li>diamond</li>
+              <li>Потреби:</li>
+            </ul>
+          </div>
+        </div>
         <div class="alert">⚠️ Please Login First</div>
       </section>
     </main>
 
-    <script  src="../client/login-reg3.js"></script>
+    <script src="../client/login-reg3.js"></script>
     <script type="module" src="../saidbar-using/saidbar-using.js"></script>
   </body>
 </html>

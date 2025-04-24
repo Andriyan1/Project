@@ -44,20 +44,27 @@ html {
   justify-content: center;
   align-items: center;
   margin-top: 40px;
-  background: #a4e2c6;
+  background: #012b65;
   border-radius: 20px;
+}
+.hero .hero-images {
+  width: 100%; /* Розтягуємо контейнер із зображенням на всю ширину */
+  max-width: 99%; /* Залишаємо невеликий відступ від країв */
+  text-align: center; /* Центруємо вміст */
 }
 
 .hero .hero-images img {
-  border-radius: 50%;
-  margin-right: 10px;
+  border-radius: 20px;
   padding-top: 5px;
-  height: 240px;
+  height: 290px; /* Залишаємо висоту як у вашому коді */
+  width: 100%; /* Розтягуємо зображення по ширині */
+  object-fit: cover; /* Зберігаємо пропорції, обрізаючи зайве */
+  max-width: 100%; /* Переконуємося, що зображення не виходить за контейнер */
 }
 
 /* Join Now Section */
 .mini-banner {
-  background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%);
+  background: linear-gradient(135deg, #6538cf 0%, #bc68a4 100%);
   border-radius: 20px;
   padding: 20px 30px;
   display: flex;
@@ -101,7 +108,6 @@ html {
   color: white;
   font-weight: bold;
   white-space: nowrap;
-  border: 1px solid white;
   transition: 0.3s ease;
 }
 
@@ -109,14 +115,56 @@ html {
   background: linear-gradient(to right, #7a1fd1, #00b0e5);
 }
 
-/* Agent Category Section */
-.agent-category {
-  margin-top: 50px;
+.agent-category-container {
+  display: flex;
+  justify-content: center;  /* Центрує по горизонталі */
+  align-items: center;      /* Центрує по вертикалі */
+  height: 18vh;            /* Робить контейнер висотою в 100% від вікна */
 }
 
-.agent-category h2 {
-  font-size: 28px;
-  margin-bottom: 10px;
+.agent-category-text {
+  font-size: 42px;         /* Розмір шрифту */
+  font-weight: bold;       /* Жирний шрифт */
+  color: #ffffff;            /* Білий колір тексту */
+  background: linear-gradient(to right, #8e2de2, #4a00e0, #00c6ff);
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: #e2e7e7;
+}
+.agent-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.agent {
+  width: 22%;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  background: linear-gradient(to right, #000000, #321eb6);
+}
+
+.agent img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.agent ul {
+  list-style: none;
+  padding: 0;
+}
+
+.agent ul li {
+  font-size: 14px;
+  font-weight: bold;
+  color: #b9b4b4;
+}
+
+.agent ul li:first-child {
+  font-size: 18px;
+  color: #eeb006;
 }
 
 .alert {
