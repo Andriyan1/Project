@@ -17,34 +17,14 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  transition:  0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
-  
+
 html {
   margin: 0;
   padding: 0;
 }
-.login-btn {
-  background: linear-gradient(to right, #8e2de2, #4a00e0, #00c6ff);
-  color: white;
-  padding: 10px 25px;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 14px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  transition: transform 0.2s ease-in-out;
-}
-.login-btn:hover {
-  background: linear-gradient(to right, #7a1fd1, #00b0e5);
-}
-.topbar {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  z-index: 1;
-  display: block;
-}
+
 .main-content {
   /* Відступ для того, щоб основний контент не перекривав сайдбар */
   padding: 20px;
@@ -54,8 +34,6 @@ html {
   width: calc(100% - 250px);
   /* Залишок екрану для контенту */
 }
-
-
 
 /* About Us Section */
 .about-us {
@@ -136,7 +114,7 @@ h2 {
   background-color: #f8f9fc;
   border-radius: 12px;
   margin-top: 40px;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .about-us h2 {
@@ -164,7 +142,7 @@ h2 {
   background-color: white;
   border-radius: 12px;
   padding: 20px;
-  box-shadow: 0 0 12px rgba(0,0,0,0.05);
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
   text-align: center;
 }
 
@@ -226,7 +204,7 @@ h2 {
 .company-description {
   padding: 40px 30px;
   background-color: #ffffff;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   color: #333;
   max-width: 1000px;
   margin: 0 auto;
@@ -254,7 +232,11 @@ h2 {
   color: #555;
 }
 .company-description-wrapper {
-  background: linear-gradient(145deg, rgba(27, 81, 158, 0.6), rgba(11, 109, 221, 0.714));
+  background: linear-gradient(
+    145deg,
+    rgba(27, 81, 158, 0.6),
+    rgba(11, 109, 221, 0.714)
+  );
   padding: 50px 30px;
   border-radius: 20px;
   max-width: 1000px;
@@ -264,7 +246,7 @@ h2 {
 
 .company-description {
   color: #ffffff;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .company-description h2 {
@@ -285,8 +267,6 @@ h2 {
   color: #000000;
   margin-bottom: 16px;
 }
-
-
 @media (max-width: 1024px) {
   .sidebar {
     width: 120px;

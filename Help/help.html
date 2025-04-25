@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>HAHM - Reviews and Ratings</title>
   <link rel="stylesheet" href="help.css" />
+  <link rel="stylesheet" href="../saidbar-using/saidbar-using.css">
   <!-- Font Awesome CDN -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
@@ -51,39 +52,72 @@
 </div>
 
     <!-- Sidebar Toggle Button -->
-    <aside class="sidebar">
-      <!-- Лого -->
+    <aside class="sidebar main-sidebar">
       <div class="logo">
         <div class="sidebar-wrapper">
           <div class="logo-container">
-            <img src="./img/photo_2025-04-11_23-16-24.jpg" class="logo-icon" alt="logo" />
+            <img src="img/photo_2025-04-11_23-16-24.jpg" class="logo-icon" alt="logo" />
             <div class="logo-text">
               <h1><span class="brand">MANA</span><span class="dot">.</span><span class="invest">invest</span></h1>
               <p class="link">WWW.MANA.WORLD</p>
-            </div>          
+            </div>
           </div>
         </div>
       </div>
-    
-      <!-- Навігація -->
+
+      <div class="user-panel">
+        <div class="user-info">
+          <i class='far fa-user-circle'></i>
+          <p id="user"></p>
+        </div>
+
+        <div class="wallet-info">
+          <p><strong>Balance:</strong> <span id="balance">$1000</span></p>
+        </div>
+
+        <div class="sidebar-inner">
+          <div class="sidebar-inner-button">
+            <i class="fa-solid fa-money-bill-transfer"></i>Deposit
+          </div>
+          <div class="sidebar-inner-button">
+            <i class="fa-solid fa-wallet"></i>Withdraw
+          </div>
+          <div class="sidebar-inner-button">
+            <i class="fa-solid fa-file"></i>View Transactions
+          </div>
+          <div class="sidebar-inner-button">
+            <i class="fa-solid fa-cog"></i>Profile Settings</div>
+        </div>
+      </div>
+
+      <br><br><br>
+
       <nav class="sidebar-nav">
-        <a onclick="window.location.href='/'" class="nav-item">🏠 Home</a>
-      <a onclick="window.location.href='/help'" class="nav-item">👥 Team</a>
-      <a onclick="window.location.href='/help'" class="nav-item">🎧 Online</a>
-      <a onclick="window.location.href='/about'" class="nav-item">ℹ About Us</a>
-      <a  onclick="window.location.href='/help'" class="nav-item">✉ Help</a>
+        <a onclick="window.location.href='/'" class="nav-item">
+          <i class="fa-solid fa-house-user"></i> Home</a
+        >
+        <a onclick="window.location.href='/help'" class="nav-item">
+          <i class="fa-solid fa-book"></i> Tutorial</a
+        >
+        <a onclick="window.location.href='/help'" class="nav-item">
+          <i class="fa-solid fa-globe"></i> Online</a
+        >
+        <a onclick="window.location.href='/about'" class="nav-item">
+          <i class="fa-solid fa-info-circle"></i> About Us</a
+        >
+        <a onclick="window.location.href='/help'" class="nav-item">
+          <i class="fa-solid fa-compass"></i> Help</a
+        >
       </nav>
-    
-      <!-- Share to внизу -->
+
       <div class="share">
         <p>Share To:</p>
         <div class="share-icons">
-          <a href="https://t.me/+ltdZ2mejROs2NThi"><i class="fa-brands fa-telegram"></i></a>
+          <a href="#"><i class="fa-brands fa-telegram"></i></a>
           <a href="#"><i class="fa-brands fa-youtube"></i></a>
           <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
         </div>
       </div>
-      
     </aside>
       <!-- Main Content -->
   <main class="main-content">
@@ -210,18 +244,18 @@
     <div class="faq-card">
       <h2><i class="fas fa-info-circle"></i> Депозити та виведення коштів</h2>
       <p>
-      <strong>Як зробити депозит через TRON?</strong></p>
+      <strong>Як зробити депозит через BSC?</strong></p>
       <p>Для поповнення вашого акаунта через TRON, вам потрібно виконати кілька простих кроків:
       Увійдіть в свій акаунт на платформі MANA.invest.</p>
       <p><strong>1.</strong> Перейдіть до розділу <strong>"Депозит".</strong></p>
-        <p><strong>2.</strong> Виберіть метод поповнення <strong>TRON(TRX).</strong></p>
-        <p><strong>3.</strong> Система надасть вам адресу гаманця <strong>TRON</strong>, на яку ви повинні надіслати кошти.</p>
+        <p><strong>2.</strong> Виберіть метод поповнення <strong>BEP-20(USDT).</strong></p>
+        <p><strong>3.</strong> Система надасть вам адресу гаманця <strong>BEP-20</strong>, на яку ви повинні надіслати кошти.</p>
             <p><strong>4.</strong> Скопіюйте адресу або скористайтесь наданим <strong>QR-кодом</strong> для зручності.</p>
                 <p><strong>5.</strong> Після надсилання коштів на вказану адресу, ваша транзакція буде підтверджена, і депозит з'явиться на вашому балансі в найкоротший час.</p>
                     <p><strong>6.</strong> QR-код для депозиту: <strong>(Згенеруйте QR-код для цієї адреси в реальному проекті)</strong></p>
                     <br>
-                    <p><strong>Яку мінімальну суму я можу внести через TRON?</strong></p>
-                    <p>Мінімальна сума депозиту через <strong>TRON</strong> становить <strong>10 TRX. </strong>Будь ласка, переконайтеся, що ви відправили необхідну кількість для успішного поповнення вашого балансу.</p>
+                    <p><strong>Яку мінімальну суму я можу внести через BSC?</strong></p>
+                    <p>Мінімальна сума депозиту через <strong>BEP-20</strong> становить <strong>30 USDT. </strong>Будь ласка, переконайтеся, що ви відправили необхідну кількість для успішного поповнення вашого балансу.</p>
       
       </p>
     </div>
@@ -258,8 +292,8 @@
       <p>
         <strong>Моя транзакція не підтверджена, що робити?</strong>
       </p>
-      <p>Якщо ваша транзакція не підтверджена, перш за все перевірте стан мережі <strong>Tron</strong> Іноді мережа може бути переповнена, і підтвердження транзакцій
-         займає трохи більше часу. Ви можете перевірити статус транзакції за допомогою <strong>TRON Explorer</strong> за вашим <strong>TXID</strong>.</p>
+      <p>Якщо ваша транзакція не підтверджена, перш за все перевірте стан мережі <strong>BSC</strong> Іноді мережа може бути переповнена, і підтвердження транзакцій
+         займає трохи більше часу. Ви можете перевірити статус транзакції за допомогою <strong>BSC Explorer</strong> за вашим <strong>Transaction Hash, TxID</strong>.</p>
     <p>
         <br>
         <strong>Я не можу побачити свої кошти на рахунку, що робити?</strong>
@@ -296,23 +330,24 @@
     <div class="faq-card">
       <h2><i class="fas fa-info-circle"></i> Платіжні методи</h2>
       <p>
-        <strong>Як здійснити депозит за допомогою TRX?</strong>
+        <strong>Як здійснити депозит за допомогою BEP-20 (USDT)?</strong>
       </p>
-      <p>Щоб поповнити свій акаунт через <strong>Tron (TRX)</strong>, перейдіть до розділу <strong>"Депозит"</strong> і оберіть метод поповнення TRON. Вам буде надано адресу для депозиту,
-         а також <strong>QR-код</strong> для швидкої оплати. Просто відправте <strong>TRX</strong> на зазначену адресу, і ваш депозит буде зарахований на рахунок.</p>
+      <p>Щоб поповнити свій акаунт через <strong>BEP-20</strong>, перейдіть до розділу <strong>"Депозит"</strong> і оберіть метод поповнення BSC. Вам буде надано адресу для депозиту,
+         а також <strong>QR-код</strong> для швидкої оплати. Просто відправте <strong>USDT</strong> на зазначену адресу, і ваш депозит буде зарахований на рахунок.</p>
          <br>
          <p>
-            <strong>Адреса для депозиту TRX:</strong>
+            <strong>Адреса BSC для депозиту:</strong>
          </p>
          <p>
-            <strong>TRON-Адреса: </strong> TXXXXXXXXXXXXXX
+            <strong>BSC-Адреса: </strong>  0x[40 шістнадцяткових символів]
          </p>
          <p>
-            <strong>QR-код для депозиту</strong>
+             або створіть <strong>QR-код</strong> для депозиту
          </p>
     </div>
   </div>
 </section>
  <script src="script.js"></script>
+ <script src="../saidbar-using/saidbar-using.js"></script>
     </body>
     </html>
