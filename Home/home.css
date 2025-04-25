@@ -123,7 +123,8 @@ html {
 }
 
 .agent-category-text {
-  font-size: 42px;         /* Розмір шрифту */
+  font-size: 35px;         /* Розмір шрифту */
+  text-shadow: 2px 2px 3px rgb(61, 61, 61);
   font-weight: bold;       /* Жирний шрифт */
   color: #ffffff;            /* Білий колір тексту */
   background: linear-gradient(to right, #8e2de2, #4a00e0, #00c6ff);
@@ -165,6 +166,129 @@ html {
 .agent ul li:first-child {
   font-size: 18px;
   color: #eeb006;
+}
+
+.explanation-container {
+  width: 99%; /* Ширина контейнера, щоб він виглядав як попередній */
+  margin: 30px auto; /* Центруємо контейнер і додаємо відступи зверху/знизу */
+  padding: 30px;
+  background: linear-gradient(to right, #000000, #321eb6);
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Тінь для ефекту */
+  text-align: center;
+}
+
+.explanation-container p {
+  font-size: 18px;
+  color: #ffffff;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 3px rgb(61, 61, 61);
+}
+
+.explanation-container h3 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #8e2de2; /* Колір для заголовка */
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 3px rgb(61, 61, 61);
+}
+
+.explanation-container span {
+  display: inline-block;
+  font-size: 16px;
+  color: #f0f0f0;
+  margin-top: 15px;
+  max-width: 90%;
+}
+
+.Referral-table {
+  font-size: 35px;         /* Розмір шрифту */
+  text-shadow: 2px 2px 3px rgb(61, 61, 61);
+  font-weight: bold;       /* Жирний шрифт */
+  color: #ffffff;            /* Білий колір тексту */
+  background: linear-gradient(to right, #8e2de2, #4a00e0, #00c6ff);
+  padding: 10px 20px;
+  border-radius: 20px;
+  text-align: center;
+  margin-top: 100px;
+}
+.referral-container {
+  width: 99%; /* Збільшили ширину контейнера */
+  margin: 30px auto; /* Центруємо контейнер і додаємо відступи зверху/знизу */
+  padding: 30px;
+  background: linear-gradient(to right, #000000, #321eb6);
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Тінь для ефекту */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Центруємо все по горизонталі */
+  justify-content: space-between; /* Розподіляємо простір між елементами */
+  height: 250px; /* Висота контейнера для визначення вертикального простору */
+}
+
+.referral-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 колонок для рівнів */
+  gap: 10px; /* Зменшили відступи між блоками */
+  justify-items: center;
+  position: relative; /* Для стрілок між блоками */
+  width: 100%; /* Ширина сітки */
+}
+
+.referral-level {
+  width: 80%; /* Зменшили ширину блоків */
+  background: linear-gradient(to right, #8e2de2, #4a00e0, #00c6ff); /* Градієнт для кожного блоку */
+  color: #ffffff;
+  text-align: center;
+  font-size: 16px; /* Зменшили шрифт */
+  padding: 15px;
+  border-radius: 10px;
+  transition: transform 0.3s ease, background 0.3s ease; /* Анімація при наведенні */
+  text-shadow: 2px 2px 3px rgb(61, 61, 61);
+}
+
+.referral-level:hover {
+  transform: scale(1.05); /* Підсвічує блок при наведенні */
+  background: linear-gradient(to right, #00c6ff, #4a00e0, #8e2de2); /* Зміна градієнту при наведенні */
+}
+
+.referral-level span {
+  display: block;
+  font-size: 14px; /* Зменшили шрифт для відсотка */
+  margin-top: 10px;
+  color: #f0f0f0;
+  text-shadow: 2px 2px 3px rgb(61, 61, 61);
+}
+
+.referral-level p {
+  font-weight: bold;
+  font-size: 18px;
+  margin: 0;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translateY(-50%);
+  font-size: 30px;
+  color: #ffffff;
+  z-index: 10; /* Стрілки будуть поверх блоків */
+  pointer-events: none; /* Щоб стрілки не блокували натискання на блоки */
+}
+
+/* Блок для суми % */
+.referral-sum {
+  width: 98%; /* Ширина 100% */
+  text-align: center; /* Центруємо текст */
+  padding: 15px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffffff;
+  background: linear-gradient(to right, #8e2de2, #4a00e0, #00c6ff);
+  border-radius: 10px;
+  margin-top: 10px;
+  text-shadow: 2px 2px 3px rgb(61, 61, 61);
 }
 
 .alert {
