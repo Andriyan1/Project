@@ -100,7 +100,7 @@ app.get("/help", (req, res) => {
   res.sendFile(path.join(__dirname, "Help", "help.html")); // Сторінка "Help"
 });
 app.get("/profile", (req, res) => {
-  res.sendFile(path.join(__dirname, "profile", "profile.html")); // Сторінка "Help"
+  res.sendFile(path.join(__dirname, "profile", "profile.html")); 
 });
 
 // Маршрут для логіну
@@ -148,11 +148,12 @@ app.post("/login", (req, res) => {
 
       // Оновлюємо cookie з токеном
       res.cookie("userToken", token, {
-        httpOnly: false, // доступно лише через HTTP
         secure: true, // працює тільки через HTTPS
         maxAge: 3600000,
         sameSite: "Lax",
       });
+
+    
 
       res.status(200).json({
         message: "Успішний логін",
@@ -686,50 +687,44 @@ app.post("/update-password", (req, res) => {
     });
   });
 });
-app.get('/profile', (req, res) => {
-  console.log('Запит до /profile отримано');
+// Віддаємо саму сторінку профілю
 
+
+// Віддаємо дані профілю (API для JS)
+// Віддаємо JSON з даними користувача для профілю
+// Показує панель
+
+
+// Дає дані користувача
+app.get('/profile-data', (req, res) => {
   const token = req.cookies.userToken;
 
-  if (!token) {
-      console.log('Токен відсутній');
-      return res.status(401).json({ message: 'Немає токена' });
-  }
+  if (!token) return res.status(401).json({ error: 'Немає токена' });
 
   try {
-      const decoded = jwt.verify(token, JWT_SECRET);
-      const userId = decoded.id; // id користувача з токена
-      console.log('Токен валідний, користувач:', userId);
+      const decoded = jwt.verify(token, "secretKey");
+      const userId = decoded.id;
 
-      const query = 'SELECT email, invitation_code FROM users WHERE id = ?';
+      const query = 'SELECT email, referral_code FROM users WHERE id = ?';
       db.query(query, [userId], (err, results) => {
-          if (err) {
-              console.error('Помилка запиту до бази:', err);
-              return res.status(500).json({ message: 'Помилка сервера' });
-          }
-
-          if (results.length === 0) {
-              console.log('Користувача не знайдено');
-              return res.status(404).json({ message: 'Користувача не знайдено' });
-          }
-
-          const user = results[0];
-          const nickname = user.email.split('@')[0];
-
-          console.log('Повертаю дані користувача:', nickname, user.email);
-          res.json({
-              nickname,
-              email: user.email,
-              invitationCode: user.invitation_code
-          });
+        if (err) return res.status(500).json({ error: 'Помилка бази' });
+      
+        if (results.length === 0) return res.status(404).json({ error: 'Користувача не знайдено' });
+      
+        const user = results[0];
+        const nickname = user.email.slice(0, 6);
+      
+        res.json({
+          nickname,
+          email: user.email,
+          referralCode: user.referral_code || null // 👈 обов'язково перевірка
+        });
       });
+      
   } catch (err) {
-      console.error('Невірний токен:', err);
-      return res.status(401).json({ message: 'Невірний токен' });
+      return res.status(401).json({ error: 'Невірний токен' });
   }
 });
-
-
 
 
 // Стартуємо сервер

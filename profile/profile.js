@@ -8,51 +8,61 @@ function logout() {
     // Перехід на головну сторінку
     window.location.href = '/'; // або вкажіть потрібний URL для головної сторінки
 }
-async function loadUserData() {
+// Завантаження даних профілю
+async function loadProfileData() {
     try {
-        console.log('Запит до /profile...');
-        const response = await fetch('https://localhost:3000/profile/', {
-            method: 'GET',
-            credentials: 'include',  // надсилає cookies автоматично
-        });
-
-        console.log('Статус відповіді:', response.status);
-        console.log('Заголовки відповіді:', response.headers);
-
-        // Перевіряємо, чи відповідає Content-Type на JSON
-        const contentType = response.headers.get('Content-Type');
-        console.log('Content-Type відповіді:', contentType);
-
-        if (!response.ok) {
-            const errorText = await response.text(); // Отримуємо текст відповіді (можливо HTML)
-            console.error("Помилка сервера:", errorText);
-            throw new Error('Помилка при отриманні даних користувача');
-        }
-
-        // Перевірка на JSON відповідь
-        if (contentType && contentType.includes('application/json')) {
-            const data = await response.json();
-            console.log('Отримані дані:', data);
-
-            // Виведення даних у елементи HTML
-            document.getElementById("username").textContent = data.nickname || "Невідомо";
-            document.getElementById("email").textContent = data.email || "Невідомо";
-            document.getElementById("invitation-code").textContent = data.invitationCode || "Невідомо";
-        } else {
-            console.error('Отримано не JSON відповідь');
-            throw new Error('Отримано не JSON відповідь');
-        }
+      const response = await fetch("/profile-data", {
+        method: "GET",
+        credentials: "include", // Щоб кукі передавались
+      });
+  
+      if (!response.ok) {
+        throw new Error("Не вдалося завантажити профіль");
+      }
+  
+      const data = await response.json();
+      console.log("Отримані дані профілю:", data);
+  
+      const nicknameElem = document.getElementById("username");
+      const emailElem = document.getElementById("email");
+      const referralCodeElem = document.getElementById("referralCode");
+  
+      if (nicknameElem) nicknameElem.textContent = data.nickname ?? "—";
+      if (emailElem) emailElem.textContent = data.email ?? "—";
+      if (referralCodeElem) referralCodeElem.textContent = data.referralCode ?? "—";
+  
     } catch (error) {
-        console.error('Помилка при отриманні даних користувача:', error);
-
-        // Якщо сталася помилка, відображаємо значення за замовчуванням
-        document.getElementById("username").textContent = "Гість";
-        document.getElementById("email").textContent = "Невідомо";
-        document.getElementById("invitation-code").textContent = "Невідомо";
+      console.error("Помилка завантаження профілю:", error);
     }
-}
+    const referralCodeElement = document.getElementById("referralCode");
+    const copyNotification = document.getElementById("copyNotification");
 
-loadUserData();  // Викликаємо функцію для завантаження даних
+    referralCodeElement.addEventListener("click", function () {
+      const code = referralCodeElement.textContent.trim();
+      if (code && code !== "Loading...") {
+        navigator.clipboard.writeText(code)
+          .then(() => {
+            // Показуємо плашку
+            copyNotification.style.display = "block";
+            setTimeout(() => {
+              copyNotification.style.display = "none";
+            }, 2000); // Показувати 2 секунди
+          })
+          .catch((err) => {
+            console.error("Помилка копіювання:", err);
+          });
+      }
+    });
+ 
+  
+  }  
+  document.addEventListener("DOMContentLoaded", loadProfileData);
+  
+  
+  
+
+
+
 
 
   
