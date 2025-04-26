@@ -19,7 +19,7 @@ function showUserGreeting() {
     if (token) {
       const nickname = localStorage.getItem('nickname');
       userElement.textContent = nickname
-        ? `Привіт, ${nickname}!`
+        ? `${nickname}`
         : 'Привіт, користувачу!';
     } else {
       userElement.textContent = 'Привіт, гість!';
@@ -34,9 +34,11 @@ document.addEventListener('DOMContentLoaded', function() {
   console.log('Token з cookies:', token);
 
   const userPanel = document.querySelector('.user-panel');
+  const loginBtn = document.querySelector('.login-btn');
   console.log('userPanel знайдено:', userPanel !== null);
 
   if (token && userPanel) {
+    loginBtn.style.display = 'none';
     userPanel.style.display = 'block';
     checkUserPanelVisibility();
     console.log('userPanel показано');

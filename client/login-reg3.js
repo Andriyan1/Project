@@ -70,11 +70,11 @@ document.addEventListener('DOMContentLoaded', () => {
           // Якщо ми на формі входу
           else if (loginForm.style.display === 'block') {
             // Редирект на головну сторінку
-            window.location.href = '../HOme/indexhome.html';  // Замість '/' вкажіть URL вашої головної сторінки
+            window.location.href = '../Home/Home.html';  // Замість '/' вкажіть URL вашої головної сторінки
           } 
-          // Якщо не на жодній формі
+          // Якщо не на жодній форміs
           else {
-            window.location.href = '../HOme/indexhome.html';  // Знову редирект на головну
+            window.location.href = '../Home/Home.html';  // Знову редирект на головну
           }
         });
       }
@@ -220,11 +220,12 @@ if (registerForm) {
     e.preventDefault();
 
     // Перевірка, чи введено реферальний код
-    const referralCode = document.getElementById('invitation-code').value.trim();
-    if (!referralCode) {
-      showMessage('Referral code is required!', 'red');  // Повідомлення про помилку
-      return;  // Якщо реферальний код не введено, зупиняємо відправку форми
-    }
+const referralCode = document.getElementById('invitation-code').value.trim();
+
+if (!referralCode) {
+  showMessage('Referral code is required!', 'red');
+  return;
+}
 
     // Перевірка на валідацію
     if (!isCodeVerified) {
@@ -255,7 +256,6 @@ if (registerForm) {
     }
 
     const requestBody = { email, password, referralCode, invitationCode: referralCode };
-
     // Відправка запиту на сервер для реєстрації
     fetch('https://localhost:3000/register', {
       method: 'POST',
@@ -268,6 +268,7 @@ if (registerForm) {
       .then(data => {
         if (data.success) {
           showMessage('Registration successful!', 'green');
+          window.location.href = '/login';
         } else {
           showMessage('Error: ' + data.message, 'red');
         }
@@ -319,15 +320,15 @@ document.getElementById('login-form').addEventListener('submit', function(event)
   });
 });
 
-function showMessage(message, type) {
-  const messageBox = document.getElementById('message');
-  messageBox.textContent = message;
-  messageBox.className = type;
-  messageBox.style.display = 'block';
-  setTimeout(() => {
-    messageBox.style.display = 'none';
-  }, 5000);
-}
+// function showMessage(message, type) {
+//   const messageBox = document.getElementById('message');
+//   messageBox.textContent = message;
+//   messageBox.className = type;
+//   messageBox.style.display = 'block';
+//   setTimeout(() => {
+//     messageBox.style.display = 'none';
+//   }, 5000);
+// }
 const generateNickname = email =>
   email ? email.split('@')[0].slice(0, 6).toUpperCase() : '';
 
