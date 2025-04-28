@@ -29,7 +29,8 @@ body {
 }
 .card {
   background-color: #2a2a2a;
-  border-radius: 10px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 255, 0, 0.2);
   padding: 20px;
   flex: 1;
 }
@@ -44,6 +45,8 @@ body {
   flex: 0 0 70%;
   min-height: 200px;
   background: linear-gradient(90deg, #1d0734, #0c5aa6);
+  display: flex;
+  flex-direction: column;
 }
 .info-row {
   display: flex;
@@ -62,15 +65,31 @@ body {
   font-weight: 500;
 }
 
-.status {
+.statuss {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 150px;
+  margin-bottom: 35px;
 }
-.status img {
-  width: 50px;
-  height: 50px;
+.status{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 35px;
+  
+}
+.statuss img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 180px; /* Відступи між іконками */
+}
+.status-img{
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 .progress {
   width: 100px;
@@ -81,6 +100,9 @@ body {
   align-items: center;
   justify-content: center;
   margin: 0 auto 10px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #00e676; /* Неоновий зелений для прогресу */
 }
 .balance {
   display: flex;
