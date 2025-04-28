@@ -126,11 +126,9 @@ body {
   color: #ffffff;
 }
 
-.referral-list {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
+
+
+
 
 .referral-item {
   display: flex;
@@ -142,14 +140,43 @@ body {
 }
 
 .ref-avatar {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  margin-right: 300px;
+  width: 60px;
+  height: 60px;
   display: flex;
+<<<<<<< HEAD
   justify-content: center;
   align-items: center;
+=======
+  align-items: center;
+  justify-content: center;
+>>>>>>> 2e503afc37c508f38e8ca8c46331d2e7e130cf21
 }
+.referral-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  max-height: 120px; /* або скільки потрібно по висоті */
+  overflow-y: auto; /* вертикальний скрол */
+  overflow-x: hidden;
+  padding-right: 5px; /* невеликий відступ для скрита скролбару */
+}
+
+/* Сховати скролбар для Chrome, Safari */
+.referral-list::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+/* Сховати скролбар для Firefox */
+.referral-list {
+  scrollbar-width: none;
+}
+
+/* Сховати скролбар для IE/Edge */
+.referral-list {
+  -ms-overflow-style: none;
+}
+
 
 .ref-details p {
   margin: 3px 0;

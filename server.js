@@ -712,7 +712,8 @@ app.get('/profile-data', (req, res) => {
         if (results.length === 0) return res.status(404).json({ error: 'Користувача не знайдено' });
       
         const user = results[0];
-        const nickname = user.email.slice(0, 6);
+        const nickname = user.email.split('@')[0].slice(0, 6);
+
       
         res.json({
           nickname,
@@ -723,6 +724,30 @@ app.get('/profile-data', (req, res) => {
       
   } catch (err) {
       return res.status(401).json({ error: 'Невірний токен' });
+  }
+});
+
+app.get('/my-referrals', (req, res) => {
+  const token = req.cookies.userToken;
+  if (!token) return res.status(401).json({ error: 'Немає токена' });
+
+  try {
+    const decoded = jwt.verify(token, "secretKey");
+    const userId = decoded.id;
+
+    const query = 'SELECT u.email FROM users u JOIN user_referrals ur ON u.id = ur.referred_id WHERE ur.referrer_id = ?';
+    db.query(query, [userId], (err, results) => {
+      if (err) return res.status(500).json({ error: 'Помилка бази даних' });
+      
+      const referrals = results.map(r => ({
+        nickname: r.email.split('@')[0].slice(0, 6)
+      }));
+
+      res.json(referrals);
+    });
+
+  } catch (err) {
+    return res.status(401).json({ error: 'Невірний токен' });
   }
 });
 

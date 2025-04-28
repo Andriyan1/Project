@@ -1,0 +1,133 @@
+body {
+  background: linear-gradient(
+    90deg,
+    #1a2c4a,
+    #3b5998
+  ); /* Темно-синій градієнт */
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 40px;
+  line-height: 1.6;
+}
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  margin-left: 250px;
+  width: calc(100% - 250px);
+}
+.section {
+  margin-bottom: 40px;
+  background-color: rgba(42, 59, 94, 0.8); /* Напівпрозорий темно-синій фон */
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.section h2 {
+  background: linear-gradient(
+    90deg,
+    #6b48ff,
+    #00ddeb
+  ); /* Градієнт для заголовків */
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  margin: -20px -20px 20px -20px; /* Щоб заголовок займав всю ширину */
+}
+.section p,
+.section ol {
+  font-size: 16px;
+  margin: 0;
+}
+.section ol {
+  padding-left: 20px;
+}
+.deposit-address-container {
+  background-color: rgba(0, 183, 255, 0.1);
+  border: 2px dashed #00b7ff;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: #00ff00;
+  margin-bottom: 20px;
+}
+.deposit-address {
+  display: none; /* Спочатку прихований */
+}
+.deposit-address.visible {
+  display: block; /* Відображаємо після анімації */
+}
+.progress-bar-container {
+  display: none; /* Спочатку прихований */
+  width: 100%;
+  background-color: #333;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+.progress-bar {
+  width: 0;
+  height: 20px;
+  background: linear-gradient(90deg, #ff48c4, #00ddeb);
+  border-radius: 5px;
+  animation: fillProgress 2s ease forwards; /* Анімація заповнення */
+}
+@keyframes fillProgress {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+.generate-btn,
+.copy-btn {
+  display: block;
+  margin: 0 auto;
+  background: linear-gradient(90deg, #ff48c4, #00ddeb);
+  border: none;
+  border-radius: 10px;
+  padding: 15px 30px;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.generate-btn:hover,
+.copy-btn:hover {
+  background: linear-gradient(90deg, #00ddeb, #ff48c4);
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 255, 255, 0.3);
+}
+.generate-btn:disabled {
+  background: #555;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+.copy-btn {
+  display: none; /* Спочатку прихована */
+}
+.copy-message {
+  display: none;
+  text-align: center;
+  color: #00ff00;
+  font-size: 14px;
+  margin-top: 10px;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+.copy-message.visible {
+  display: block;
+  opacity: 1;
+}
+.highlight {
+  color: #00ff00;
+  font-weight: bold;
+}

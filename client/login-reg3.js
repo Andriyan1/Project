@@ -141,7 +141,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const messageElement = document.getElementById('message');
     messageElement.textContent = message;
     messageElement.style.color = color;
+
     messageElement.style.display = 'block';
+  }
+   function showMessage(message, type) {
+    const messageBox = document.getElementById('message');
+    messageBox.textContent = message;
+    messageBox.className = type;
+    messageBox.style.display = 'block';
+    setTimeout(() => {
+      messageBox.style.display = 'none';
+    }, 5000);
   }
   
 
@@ -282,12 +292,12 @@ if (!referralCode) {
 
 document.getElementById('login-form').addEventListener('submit', function(event) {
   event.preventDefault();
-
+ 
   const email = document.getElementById('login-email').value.trim();
   const password = document.getElementById('login-password').value.trim();
 
   if (!email || !password) {
-    showMessage('Будь ласка, введіть email та пароль', 'error');
+    showMessage('Будь ласка, введіть email та пароль', 'red');
     return;
   }
 
@@ -299,6 +309,7 @@ document.getElementById('login-form').addEventListener('submit', function(event)
   .then(response => response.json())
   .then(data => {
     console.log('Відповідь від сервера:', data);
+    
     if (data.message === 'Успішний логін') {
       if (data.token) {
         document.cookie = `userToken=${data.token}; path=/; max-age=3600`;
@@ -306,29 +317,24 @@ document.getElementById('login-form').addEventListener('submit', function(event)
         localStorage.setItem('nickname', nickname); 
       }
 
-      showMessage('Успішний логін!', 'success');
+      showMessage('Вхід успішний!', 'green');
       setTimeout(() => {
         window.location.href = '/';  // Перехід на головну
       }, 1000);
+    } else if (data.message === '') {
+      showMessage('');
     } else {
-      showMessage(data.message, 'error');
+      showMessage('No user with such an email was found.', 'red');
     }
   })
   .catch(error => {
     console.error('Error:', error);
-    showMessage('Сталася помилка при логіні. Спробуйте ще раз.', 'error');
+    showMessage('There was an error login. Try again.', 'red');
   });
 });
 
-// function showMessage(message, type) {
-//   const messageBox = document.getElementById('message');
-//   messageBox.textContent = message;
-//   messageBox.className = type;
-//   messageBox.style.display = 'block';
-//   setTimeout(() => {
-//     messageBox.style.display = 'none';
-//   }, 5000);
-// }
+
+
 const generateNickname = email =>
   email ? email.split('@')[0].slice(0, 6).toUpperCase() : '';
 
