@@ -136,23 +136,23 @@ document.addEventListener('DOMContentLoaded', () => {
       });
   });
   
-  // Функція для відображення повідомлень
-  function showMessage(message, color) {
-    const messageElement = document.getElementById('message');
-    messageElement.textContent = message;
-    messageElement.style.color = color;
+  //Функція для відображення повідомлень
+  // function showMessage(message, color) {
+  //   const messageElement = document.getElementById('message');
+  //   messageElement.textContent = message;
+  //   messageElement.style.color = color;
 
-    messageElement.style.display = 'block';
-  }
-   function showMessage(message, type) {
-    const messageBox = document.getElementById('message');
-    messageBox.textContent = message;
-    messageBox.className = type;
-    messageBox.style.display = 'block';
-    setTimeout(() => {
-      messageBox.style.display = 'none';
-    }, 5000);
-  }
+  //   messageElement.style.display = 'block';
+  // }
+  //  function showMessage(message, type) {
+  //   const messageBox = document.getElementById('message');
+  //   messageBox.textContent = message;
+  //   messageBox.className = type;
+  //   messageBox.style.display = 'block';
+  //   setTimeout(() => {
+  //     messageBox.style.display = 'none';
+  //   }, 5000);
+  // }
   
 
   // Code verification
@@ -206,6 +206,10 @@ if (verifyCodeBtn) {
 
 // Функція для показу повідомлень
 function showMessage(message, color) {
+  const loginMessage = document.getElementById('login-message');
+  loginMessage.style.color = color;
+  loginMessage.textContent = message;
+  loginMessage.style.display = 'inline';
   const registrationMessage = document.getElementById('registration-message');
   registrationMessage.style.color = color;
   registrationMessage.textContent = message;

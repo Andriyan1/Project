@@ -176,9 +176,19 @@ function logout() {
       console.error('Помилка завантаження рефералів:', err);
     }
   }
+  const token = getCookie('userToken'); // Ім'я кукі, яке ти використовуєш в бекенді
+
+  if (!token) {
+    // Якщо кукі немає — перекидаємо на головну
+    window.location.href = '/';
+  }
+
+function getCookie(name) {
+  const value = `; ${document.cookie}`;
+  const parts = value.split(`; ${name}=`);
+  if (parts.length === 2) return parts.pop().split(';').shift();
   
-  
-  
+}
   document.addEventListener('DOMContentLoaded', function() {
     loadProfileData();
     loadMyReferrals();

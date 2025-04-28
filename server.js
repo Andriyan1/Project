@@ -77,6 +77,8 @@ app.use("/about", express.static(path.join(__dirname, "about")));
 app.use("/profile", express.static(path.join(__dirname, "profile")));
 // Налаштування для обробки статичних файлів з папки 'Help'
 app.use("/Help", express.static(path.join(__dirname, "Help")));
+app.use("/Tutorial", express.static(path.join(__dirname, "Tutorial")));
+
 
 // Маршрут для головної сторінки (Home)
 app.get("/", (req, res) => {
@@ -102,7 +104,9 @@ app.get("/help", (req, res) => {
 app.get("/profile", (req, res) => {
   res.sendFile(path.join(__dirname, "profile", "profile.html")); 
 });
-
+app.get("/Tutorial", (req, res) => {
+  res.sendFile(path.join(__dirname, "Tutorial", "Tutorial.html")); 
+});
 // Маршрут для логіну
 app.post("/login", (req, res) => {
   const { email, password } = req.body;
