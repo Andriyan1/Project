@@ -1,0 +1,88 @@
+body {
+  background: linear-gradient(90deg, #1a2c4a, #3b5998); /* Градієнтний фон */
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 40px;
+  line-height: 1.6;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  margin-right: 0;
+  transition: 0.3s ease-in-out;
+  margin-left: 250px;
+  width: calc(100% - 250px);
+}
+.section {
+  margin-bottom: 40px;
+}
+.section-header {
+  background: linear-gradient(
+    90deg,
+    #6b48ff,
+    #00ddeb
+  ); /* Градієнт для заголовків */
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  margin-bottom: 20px;
+}
+.section-header:hover {
+  background: linear-gradient(
+    90deg,
+    #ccb100,
+    #000908
+  ); /* Зміна градієнта при наведенні */
+  transform: scale(1.02); /* Легке збільшення (масштабування) */
+  box-shadow: 0 4px 12px rgba(3, 3, 2, 0.818); /* Додавання тіні блоку */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Посилення тіні тексту */
+}
+.section-content {
+  display: flex;
+  gap: 20px;
+  background-color: rgba(42, 59, 94, 0.8); /* Напівпрозорий темно-синій фон */
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.text-content {
+  flex: 7; /* Текст займає 70% ширини */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+.image-content {
+  flex: 3; /* Зображення займає 30% ширини */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.image-content img {
+  width: 100%;
+  height: auto;
+  max-height: auto; /* Обмежуємо висоту зображення */
+  border-radius: 10px;
+  object-fit: cover; /* Зберігаємо пропорції зображення */
+}
+.text-content ol {
+  padding-left: 20px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+.text-content li {
+  margin-bottom: 10px;
+  font-size: 16px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+.text-content li ul {
+  padding-left: 20px;
+  list-style-type: disc;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+.highlight {
+  color: #00ff00;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
