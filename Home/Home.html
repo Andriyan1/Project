@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HAHM - Reviews and Ratings</title>
+    <title>MANA.invest</title>
     <link rel="stylesheet" href="../Home/home.css" />
     <link rel="stylesheet" href="../saidbar-using/saidbar-using.css" />
     <!-- Font Awesome CDN -->
@@ -74,6 +74,9 @@
         <a onclick="window.location.href='/'" class="nav-item">
           <i class="fa-solid fa-house-user"></i> Home</a
         >
+        <a onclick="window.location.href='/'" class="nav-item">
+          <i class="fa-solid fa-balance-scale"></i> Vote</a
+        >
         <a onclick="window.location.href='/Tutorial'" class="nav-item">
           <i class="fa-solid fa-book"></i> Tutorial</a
         >
@@ -114,63 +117,65 @@
         <div class="hero-text"></div>
       </section>
 
-      <!-- Кнопка "JOIN US NOW" з лінком на форму логіну і реєстрації -->
-      <div class="mini-banner">
-        <div class="mini-banner-img">
-          <img src="img/referral-friend.webp" alt="Happy People" />
-        </div>
-        <div class="mini-banner-content">
-          <h2>JOIN US NOW</h2>
-          <p>Rate Review And Earn From It</p>
-        </div>
-        <a onclick="window.location.href='/login'" class="mini-signup-btn"
-          >SIGN UP NOW</a
-        >
-      </div>
-
       <!-- Agent Category Section -->
-      <div class="agent-category-container">
-        <div class="agent-category-text">
-          AGENT CATEGORY
-        </div>
-      </div>
-        <div class="agent-container">
-          <div class="agent">
+      <div class="agent-container">
+        <div class="agent">
             <img src="img/Silver.jpg" alt="Agent 1" />
             <ul>
-              <li>Silver</li>
-              <li>Потреби:</li>
+                <li>Silver</li>
+                <li>Потреби:</li>
+                <li>Criteria: 2.3% - 1.6%</li>
+                <li>7 referrals</li>
+                <li>$500</li>
             </ul>
-          </div>
-          <div class="agent">
+        </div>
+        <div class="agent">
             <img src="img/Gold.jpg" alt="Agent 2" />
             <ul>
-              <li>Gold</li>
-              <li>Потреби:</li>
+                <li>Gold</li>
+                <li>Потреби:</li>
+                <li>Criteria: 2.5% - 1.75%</li>
+                <li>Referrals: 12</li>
+                <li>$2,000</li>
             </ul>
-          </div>
-          <div class="agent">
+        </div>
+        <div class="agent">
             <img src="img/Corona.jpg" alt="Agent 3" />
             <ul>
-              <li>Corona</li>
-              <li>Потреби:</li>
+                <li>Corona</li>
+                <li>Потреби:</li>
+                <li>Criteria: 2.9% - 2%</li>
+                <li>Referrals: 21</li>
+                <li>$6,000</li>
             </ul>
-          </div>
-          <div class="agent">
+        </div>
+        <div class="agent">
             <img src="img/diamond.jpg" alt="Agent 4" />
             <ul>
-              <li>diamond</li>
-              <li>Потреби:</li>
+                <li>diamond</li>
+                <li>Потреби:</li>
+                <li>Criteria: 3.1% - 2.2%</li>
+                <li>Referrals: 35</li>
+                <li>$15,000</li>
             </ul>
-          </div>
         </div>
+    </div>
+    <div class="mini-banner">
+      <div class="mini-banner-content">
+          <h2>Vote Now</h2>
+          <p>Support your favorite project!</p>
+      </div>
+      <button class="mini-signup-btn" id="voteBtn" onclick="startVoting()">
+          START VOTING NOW
+      </button>
+  </div>
         <!-- Контейнер для пояснення -->
 <div class="explanation-container">
   <h3>Навіщо потрібні агенти?</h3>
   <p>
     Ваш прибуток залежить безпосередньо від рівня вашого агента. Чим вищий рівень агента, тим більший відсоток ви отримуєте від голосування. 
     Наприклад, якщо ваш агент має рівень **Silver**, то ви отримаєте лише 5% від прибутку з голосування. Але якщо ваш агент має рівень **Diamond**, 
-    то ви отримаєте значно більший відсоток — до 10% від ваших голосів.
+    то ви отримаєте значно більший відсоток — до 10% від ваших голосів. Перехід на кожного наступного агента відбувається автоматично, після виконання потреб.
   </p>
   <p>
     Таким чином, для максимізації своїх доходів важливо підвищувати рівень агента, адже чим вищий рівень, тим більше ви заробляєте з кожного голосування.
@@ -241,5 +246,6 @@
 
     <script src="../client/login-reg3.js"></script>
     <script type="module" src="../saidbar-using/saidbar-using.js"></script>
+    <script src="home.js"></script>
   </body>
 </html>

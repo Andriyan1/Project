@@ -1,0 +1,141 @@
+body {
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(90deg, #1a2c4a, #3b5998);
+}
+.header-image {
+  width: 100%;
+  height: 200px; /* Висота контейнера зображення */
+  overflow: hidden;
+  margin-bottom: 40px;
+  margin-left: 250px;
+  width: calc(100% - 250px);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+.header-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.projects-container {
+  display: flex;
+  flex-direction: row; /* Зміна на горизонтальне розташування */
+  align-items: center;
+  gap: 40px; /* Більший проміжок між контейнерами */
+  max-width: 1200px;
+  width: 100%;
+  margin-left: 250px;
+  width: calc(100% - 250px);
+}
+.project {
+  background: linear-gradient(to right, #2a3b5e, #1a2c4a);
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  width: 45%; /* Кожен контейнер займає половину доступного простору */
+  max-width: 500px;
+}
+.project img {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+.project h2 {
+  font-size: 24px;
+  margin: 0 0 10px;
+  color: #00ddeb;
+}
+.project p {
+  font-size: 16px;
+  color: #b9b4b4;
+  margin: 0 0 20px;
+}
+.vote-btn {
+  background: linear-gradient(to right, #ff48c4, #00ddeb);
+  border: none;
+  border-radius: 10px;
+  padding: 12px 30px;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.vote-btn:hover {
+  background: linear-gradient(to right, #00ddeb, #ff48c4);
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 255, 255, 0.3);
+}
+.vote-count {
+  transition: color 0.3s ease;
+}
+.vote-count.updated {
+  color: #ff0;
+  animation: pulse 0.5s;
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.vs-icon {
+  font-size: 70px;
+  font-weight: bold;
+  color: #ff48c4;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+.timer-container {
+  margin-top: 30px;
+  background: linear-gradient(to right, #2a3b5e, #1a2c4a);
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  max-width: 400px;
+  width: 100%;
+  margin-left: 200px;
+  width: calc(100% - 200px);
+}
+.timer-container h3 {
+  font-size: 20px;
+  margin: 0 0 10px;
+  color: #00ddeb;
+}
+.timer {
+  font-size: 24px;
+  font-weight: bold;
+  color: #00ff00;
+}
+.description-container {
+  margin-top: 30px;
+  background: rgba(26, 42, 68, 0.9);
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  max-width: 1200px;
+  width: 100%;
+  margin-left: 250px;
+  width: calc(100% - 250px);
+}
+.description-container p {
+  font-size: 16px;
+  color: #a0a0a0;
+  margin: 0;
+}

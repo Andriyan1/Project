@@ -42,25 +42,37 @@
       <div class="user-panel">
         <div class="user-info">
           <i class="far fa-user-circle"></i>
-      
+
           <p id="user"></p>
         </div>
-      
+
         <div class="wallet-info">
           <p><strong>Balance:</strong> <span id="balance">$1000</span></p>
         </div>
-      
+
         <div class="sidebar-inner">
-          <div class="sidebar-inner-button" onclick="window.location.href='/Deposit'">
-            <i class="fa-solid fa-money-bill-transfer" ></i>Deposit
+          <div
+            class="sidebar-inner-button"
+            onclick="window.location.href='/Deposit'"
+          >
+            <i class="fa-solid fa-money-bill-transfer"></i>Deposit
           </div>
-          <div class="sidebar-inner-button" onclick="window.location.href='/Withdraw'">
-            <i class="fa-solid fa-wallet" ></i>Withdraw
+          <div
+            class="sidebar-inner-button"
+            onclick="window.location.href='/Withdraw'"
+          >
+            <i class="fa-solid fa-wallet"></i>Withdraw
           </div>
-          <div class="sidebar-inner-button" onclick="window.location.href='/ViewTrans'">
-            <i class="fa-solid fa-file" ></i>View Transactions
+          <div
+            class="sidebar-inner-button"
+            onclick="window.location.href='/ViewTrans'"
+          >
+            <i class="fa-solid fa-file"></i>View Transactions
           </div>
-          <div class="sidebar-inner-button" onclick="window.location.href='/profile'">
+          <div
+            class="sidebar-inner-button"
+            onclick="window.location.href='/profile'"
+          >
             <i class="fa-solid fa-cog"></i>Profile Settings
           </div>
         </div>
@@ -71,6 +83,9 @@
       <nav class="sidebar-nav">
         <a onclick="window.location.href='/'" class="nav-item">
           <i class="fa-solid fa-house-user"></i> Home</a
+        >
+        <a onclick="window.location.href='/'" class="nav-item">
+          <i class="fa-solid fa-balance-scale"></i> Vote</a
         >
         <a onclick="window.location.href='/help'" class="nav-item">
           <i class="fa-solid fa-book"></i> Tutorial</a
@@ -98,7 +113,10 @@
     <div class="container">
       <!-- Пояснення про транзакції в BCS -->
       <div class="section">
-        <h2>What are BCS Transactions?</h2>
+        <h2>
+          <i class="fa-solid fa-angle-double-down"></i>What are BCS
+          Transactions?
+        </h2>
         <p>
           Curious about your crypto journey in the
           <span class="highlight">BCS network</span>? This page lets you peek
@@ -110,7 +128,7 @@
 
       <!-- Контейнер для перегляду транзакцій -->
       <div class="section">
-        <h2>Your Transaction History</h2>
+        <h2><i class="fa-solid fa-file-alt"></i>Your Transaction History</h2>
         <div class="transactions-container" id="transactionsContainer">
           <div class="date-range">
             <input type="date" id="startDate" value="2025-03-01" />
@@ -141,7 +159,10 @@
 
       <!-- Пояснення заголовків таблиці -->
       <div class="section">
-        <h2>Understanding Your Transaction Table</h2>
+        <h2>
+          <i class="fa-solid fa-graduation-cap"></i>Understanding Your
+          Transaction Table
+        </h2>
         <p>Here’s what each column in the table means:</p>
         <ul>
           <li>
