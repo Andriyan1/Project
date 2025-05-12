@@ -80,6 +80,7 @@ app.use("/Tutorial", express.static(path.join(__dirname, "Tutorial")));
 app.use("/Deposit", express.static(path.join(__dirname, "Deposit")));
 app.use("/ViewTrans", express.static(path.join(__dirname, "ViewTrans")));
 app.use("/Withdraw", express.static(path.join(__dirname, "Withdraw")));
+app.use("/Vote", express.static(path.join(__dirname, "Vote")));
 
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "Home", "Home.html"));
@@ -113,6 +114,9 @@ app.get("/ViewTrans", (req, res) => {
 });
 app.get("/Withdraw", (req, res) => {
   res.sendFile(path.join(__dirname, "Withdraw", "withdraw.html"));
+});
+app.get("/Vote", (req, res) => {
+  res.sendFile(path.join(__dirname, "Vote", "Vote.html"));
 });
 
 

@@ -1,166 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Project Voting</title>
-    <link rel="stylesheet" href="../Vote/Vote.css" />
-    <link rel="stylesheet" href="../saidbar-using/saidbar-using.css" />
-    <!-- Font Awesome CDN -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <aside class="sidebar main-sidebar">
-      <div class="logo">
-        <div class="sidebar-wrapper">
-          <div class="logo-container">
-            <img
-              src="../Home/img/photo_2025-04-11_23-16-24.jpg"
-              class="logo-icon"
-              alt="logo"
-            />
-            <div class="logo-text">
-              <h1>
-                <span class="brand">MANA</span><span class="dot">.</span
-                ><span class="invest">invest</span>
-              </h1>
-              <p class="link">WWW.MANA.WORLD</p>
-            </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project Voting</title>
+  <link rel="stylesheet" href="../Vote/Vote.css" />
+  <link rel="stylesheet" href="../saidbar-using/saidbar-using.css" />
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <aside class="sidebar main-sidebar">
+    <div class="logo">
+      <div class="sidebar-wrapper">
+        <div class="logo-container">
+          <img src="../Home/img/photo_2025-04-11_23-16-24.jpg" class="logo-icon" alt="logo" />
+          <div class="logo-text">
+            <h1>
+              <span class="brand">MANA</span><span class="dot">.</span><span class="invest">invest</span>
+            </h1>
+            <p class="link">WWW.MANA.WORLD</p>
           </div>
         </div>
-      </div>
-
-      <div class="user-panel">
-        <div class="user-info">
-          <i class="far fa-user-circle"></i>
-
-          <p id="user"></p>
-        </div>
-
-        <div class="wallet-info">
-          <p><strong>Balance:</strong> <span id="balance">$1000</span></p>
-        </div>
-
-        <div class="sidebar-inner">
-          <div
-            class="sidebar-inner-button"
-            onclick="window.location.href='/Deposit'"
-          >
-            <i class="fa-solid fa-money-bill-transfer"></i>Deposit
-          </div>
-          <div
-            class="sidebar-inner-button"
-            onclick="window.location.href='/Withdraw'"
-          >
-            <i class="fa-solid fa-wallet"></i>Withdraw
-          </div>
-          <div
-            class="sidebar-inner-button"
-            onclick="window.location.href='/ViewTrans'"
-          >
-            <i class="fa-solid fa-file"></i>View Transactions
-          </div>
-          <div
-            class="sidebar-inner-button"
-            onclick="window.location.href='/profile'"
-          >
-            <i class="fa-solid fa-cog"></i>Profile Settings
-          </div>
-        </div>
-      </div>
-
-      <br /><br /><br />
-
-      <nav class="sidebar-nav">
-        <a onclick="window.location.href='/'" class="nav-item">
-          <i class="fa-solid fa-house-user"></i> Home</a
-        >
-        <a onclick="window.location.href='/'" class="nav-item">
-          <i class="fa-solid fa-balance-scale"></i> Vote</a
-        >
-        <a onclick="window.location.href='/help'" class="nav-item">
-          <i class="fa-solid fa-book"></i> Tutorial</a
-        >
-        <a onclick="window.location.href='/help'" class="nav-item">
-          <i class="fa-solid fa-globe"></i> Online</a
-        >
-        <a onclick="window.location.href='/about'" class="nav-item">
-          <i class="fa-solid fa-info-circle"></i> About Us</a
-        >
-        <a onclick="window.location.href='/help'" class="nav-item">
-          <i class="fa-solid fa-compass"></i> Help</a
-        >
-      </nav>
-
-      <div class="share">
-        <p>Share To:</p>
-        <div class="share-icons">
-          <a href="#"><i class="fa-brands fa-telegram"></i></a>
-          <a href="#"><i class="fa-brands fa-youtube"></i></a>
-          <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
-        </div>
-      </div>
-    </aside>
-    <!-- Контейнер із зображенням на всю ширину -->
-    <div class="header-image">
-      <img src="../Home/img/baner1.jpg" alt="Header Background" />
-    </div>
-    <div class="projects-container">
-      <!-- Перший проект -->
-      <div class="project">
-        <img src="../Home/img/Gold.jpg" alt="EcoSphere Medal" />
-        <h2>EcoSphere</h2>
-        <p>
-          An innovative platform to promote sustainable living through
-          AI-powered waste management solutions.
-        </p>
-        <div class="vote-count" id="ecoSphereVotes">Votes: 0</div>
-        <button class="vote-btn" onclick="vote('EcoSphere')">Vote Now</button>
-      </div>
-
-      <!-- Іконка VS -->
-      <div class="vs-icon">VS</div>
-
-      <!-- Другий проект -->
-      <div class="project">
-        <img src="../Home/img/diamond.jpg" alt="StarLink Medal" />
-        <h2>StarLink</h2>
-        <p>
-          A futuristic app connecting space enthusiasts with real-time
-          astronomical data and virtual stargazing.
-        </p>
-        <div class="vote-count" id="starLinkVotes">Votes: 0</div>
-        <button class="vote-btn" onclick="vote('StarLink')">Vote Now</button>
       </div>
     </div>
 
-    <!-- Таймер -->
-    <div class="timer-container">
-      <h3>Time Left to Vote</h3>
-      <div class="timer" id="timer">06:00:00</div>
+    <div class="user-panel">
+      <div class="user-info">
+        <i class="far fa-user-circle"></i>
+
+        <p id="user"></p>
+      </div>
+
+      <div class="wallet-info">
+        <p><strong>Balance:</strong> <span id="balance">$1000</span></p>
+      </div>
+
+      <div class="sidebar-inner">
+        <div class="sidebar-inner-button" onclick="window.location.href='/Deposit'">
+          <i class="fa-solid fa-money-bill-transfer"></i>Deposit
+        </div>
+        <div class="sidebar-inner-button" onclick="window.location.href='/Withdraw'">
+          <i class="fa-solid fa-wallet"></i>Withdraw
+        </div>
+        <div class="sidebar-inner-button" onclick="window.location.href='/ViewTrans'">
+          <i class="fa-solid fa-file"></i>View Transactions
+        </div>
+        <div class="sidebar-inner-button" onclick="window.location.href='/profile'">
+          <i class="fa-solid fa-cog"></i>Profile Settings
+        </div>
+      </div>
     </div>
-    <!-- Опис голосування -->
-    <div class="description-container">
+
+    <br /><br /><br />
+
+    <nav class="sidebar-nav">
+      <a onclick="window.location.href='/'" class="nav-item">
+        <i class="fa-solid fa-house-user"></i> Home</a>
+      <a onclick="window.location.href='/Vote'" class="nav-item">
+        <i class="fa-solid fa-balance-scale"></i> Vote</a>
+      <a onclick="window.location.href='/help'" class="nav-item">
+        <i class="fa-solid fa-book"></i> Tutorial</a>
+      <a onclick="window.location.href='/help'" class="nav-item">
+        <i class="fa-solid fa-globe"></i> Online</a>
+      <a onclick="window.location.href='/about'" class="nav-item">
+        <i class="fa-solid fa-info-circle"></i> About Us</a>
+      <a onclick="window.location.href='/help'" class="nav-item">
+        <i class="fa-solid fa-compass"></i> Help</a>
+    </nav>
+
+    <div class="share">
+      <p>Share To:</p>
+      <div class="share-icons">
+        <a href="#"><i class="fa-brands fa-telegram"></i></a>
+        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+        <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+      </div>
+    </div>
+  </aside>
+  <!-- Контейнер із зображенням на всю ширину -->
+  <div class="header-image">
+    <img src="../Home/img/baner1.jpg" alt="Header Background" />
+  </div>
+  <div class="projects-container">
+    <!-- Перший проект -->
+    <div class="project">
+      <img src="../Home/img/Gold.jpg" alt="EcoSphere Medal" />
+      <h2>EcoSphere</h2>
       <p>
-        Voting is a process where you help decide which project earns our
-        community awards by casting your vote. By participating, you support
-        innovative ideas and contribute to their growth. After each voting round
-        ends, all voters receive rewards in the form of a percentage added to
-        their balance. Those who vote for the winning project will receive a
-        higher reward percentage compared to those who supported the losing
-        project.
+        An innovative platform to promote sustainable living through
+        AI-powered waste management solutions.
       </p>
+      <div class="vote-count" id="ecoSphereVotes">Votes: 0</div>
+      <button class="vote-btn" onclick="vote('EcoSphere')">Vote Now</button>
     </div>
 
-    <script src="../client/login-reg3.js"></script>
-    <script src="Vote.js"></script>
-    <script type="module" src="../saidbar-using/saidbar-using.js"></script>
-  </body>
+    <!-- Іконка VS -->
+    <div class="vs-icon">VS</div>
+
+    <!-- Другий проект -->
+    <div class="project">
+      <img src="../Home/img/diamond.jpg" alt="StarLink Medal" />
+      <h2>StarLink</h2>
+      <p>
+        A futuristic app connecting space enthusiasts with real-time
+        astronomical data and virtual stargazing.
+      </p>
+      <div class="vote-count" id="starLinkVotes">Votes: 0</div>
+      <button class="vote-btn" onclick="vote('StarLink')">Vote Now</button>
+    </div>
+  </div>
+
+  <!-- Таймер -->
+  <div class="timer-container">
+    <h3>Time Left to Vote</h3>
+    <div class="timer" id="timer">06:00:00</div>
+  </div>
+  <!-- Опис голосування -->
+  <div class="description-container">
+    <p>
+      Voting is a process where you help decide which project earns our
+      community awards by casting your vote. By participating, you support
+      innovative ideas and contribute to their growth. After each voting round
+      ends, all voters receive rewards in the form of a percentage added to
+      their balance. Those who vote for the winning project will receive a
+      higher reward percentage compared to those who supported the losing
+      project.
+    </p>
+  </div>
+
+  <script src="../client/login-reg3.js"></script>
+  <script src="Vote.js"></script>
+  <script type="module" src="../saidbar-using/saidbar-using.js"></script>
+</body>
+
 </html>

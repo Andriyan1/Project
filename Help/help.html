@@ -1,143 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>HAHM - Reviews and Ratings</title>
   <link rel="stylesheet" href="help.css" />
   <link rel="stylesheet" href="../saidbar-using/saidbar-using.css">
   <!-- Font Awesome CDN -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <style>
     html {
       scroll-behavior: smooth;
     }
-  
+
     .feature a {
       text-decoration: none;
       color: inherit;
       display: block;
     }
   </style>
-  
-</head>
-<body>
- <!-- Кнопка для відкриття чат-бота -->
- <div id="chat-button" class="chat-button">
-  <i style='font-size:24px' class='fas'>&#xf086;</i>
-</div>
 
-<!-- Спливаюче вікно чат-бота -->
-<div id="chat-popup" class="chat-popup">
-  <div class="chat-header">
-    <span>Chatbot</span>
-    <button id="close-chat" class="close-btn">X</button>
+</head>
+
+<body>
+  <!-- Кнопка для відкриття чат-бота -->
+  <div id="chat-button" class="chat-button">
+    <i style='font-size:24px' class='fas'>&#xf086;</i>
   </div>
-  <div class="chat-body">
-    <div class="messages" id="messages"></div>
-    <div id="faq-buttons" class="faq-buttons">
-      <button class="faq-btn" data-question="What is your return policy?">What is your return policy?</button>
-      <button class="faq-btn" data-question="How do I track my order?">How do I track my order?</button>
-      <button class="faq-btn" data-question="Do you ship internationally?">Do you ship internationally?</button>
-      <button class="faq-btn" data-question="What payment methods do you accept?">What payment methods do you accept?</button>
-      <button class="faq-btn" data-question="Can I change my order?">Can I change my order?</button>
+
+  <!-- Спливаюче вікно чат-бота -->
+  <div id="chat-popup" class="chat-popup">
+    <div class="chat-header">
+      <span>Chatbot</span>
+      <button id="close-chat" class="close-btn">X</button>
+    </div>
+    <div class="chat-body">
+      <div class="messages" id="messages"></div>
+      <div id="faq-buttons" class="faq-buttons">
+        <button class="faq-btn" data-question="What is your return policy?">What is your return policy?</button>
+        <button class="faq-btn" data-question="How do I track my order?">How do I track my order?</button>
+        <button class="faq-btn" data-question="Do you ship internationally?">Do you ship internationally?</button>
+        <button class="faq-btn" data-question="What payment methods do you accept?">What payment methods do you
+          accept?</button>
+        <button class="faq-btn" data-question="Can I change my order?">Can I change my order?</button>
+      </div>
+    </div>
+    <div class="chat-footer">
+      <input type="text" id="user-input" placeholder="Ask your question..." />
+      <button id="send-btn">Send</button>
     </div>
   </div>
-  <div class="chat-footer">
-    <input type="text" id="user-input" placeholder="Ask your question..." />
-    <button id="send-btn">Send</button>
-  </div>
-</div>
 
-    <!-- Sidebar Toggle Button -->
-    <aside class="sidebar main-sidebar">
-      <div class="logo">
-        <div class="sidebar-wrapper">
-          <div class="logo-container">
-            <img src="img/photo_2025-04-11_23-16-24.jpg" class="logo-icon" alt="logo" />
-            <div class="logo-text">
-              <h1><span class="brand">MANA</span><span class="dot">.</span><span class="invest">invest</span></h1>
-              <p class="link">WWW.MANA.WORLD</p>
-            </div>
+  <!-- Sidebar Toggle Button -->
+  <aside class="sidebar main-sidebar">
+    <div class="logo">
+      <div class="sidebar-wrapper">
+        <div class="logo-container">
+          <img src="img/photo_2025-04-11_23-16-24.jpg" class="logo-icon" alt="logo" />
+          <div class="logo-text">
+            <h1><span class="brand">MANA</span><span class="dot">.</span><span class="invest">invest</span></h1>
+            <p class="link">WWW.MANA.WORLD</p>
           </div>
         </div>
       </div>
+    </div>
 
-      <div class="user-panel">
-        <div class="user-info">
-          <i class="far fa-user-circle"></i>
-      
-          <p id="user"></p>
-        </div>
-      
-        <div class="wallet-info">
-          <p><strong>Balance:</strong> <span id="balance">$1000</span></p>
-        </div>
-      
-        <div class="sidebar-inner">
-          <div class="sidebar-inner-button" onclick="window.location.href='/Deposit'">
-            <i class="fa-solid fa-money-bill-transfer" ></i>Deposit
-          </div>
-          <div class="sidebar-inner-button" onclick="window.location.href='/Withdraw'">
-            <i class="fa-solid fa-wallet" ></i>Withdraw
-          </div>
-          <div class="sidebar-inner-button" onclick="window.location.href='/ViewTrans'">
-            <i class="fa-solid fa-file" ></i>View Transactions
-          </div>
-          <div class="sidebar-inner-button" onclick="window.location.href='/profile'">
-            <i class="fa-solid fa-cog"></i>Profile Settings
-          </div>
-        </div>
+    <div class="user-panel">
+      <div class="user-info">
+        <i class="far fa-user-circle"></i>
+
+        <p id="user"></p>
       </div>
 
-      <br><br><br>
+      <div class="wallet-info">
+        <p><strong>Balance:</strong> <span id="balance">$1000</span></p>
+      </div>
 
-      <nav class="sidebar-nav">
-        <a onclick="window.location.href='/'" class="nav-item">
-          <i class="fa-solid fa-house-user"></i> Home</a
-        >
-        <a onclick="window.location.href='/'" class="nav-item">
-          <i class="fa-solid fa-balance-scale"></i> Vote</a
-        >
-        <a onclick="window.location.href='/Tutorial'" class="nav-item">
-          <i class="fa-solid fa-book"></i> Tutorial</a
-        >
-        <a onclick="window.location.href='/help'" class="nav-item">
-          <i class="fa-solid fa-globe"></i> Online</a
-        >
-        <a onclick="window.location.href='/about'" class="nav-item">
-          <i class="fa-solid fa-info-circle"></i> About Us</a
-        >
-        <a onclick="window.location.href='/help'" class="nav-item">
-          <i class="fa-solid fa-compass"></i> Help</a
-        >
-      </nav>
-
-      <div class="share">
-        <p>Share To:</p>
-        <div class="share-icons">
-          <a href="#"><i class="fa-brands fa-telegram"></i></a>
-          <a href="#"><i class="fa-brands fa-youtube"></i></a>
-          <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+      <div class="sidebar-inner">
+        <div class="sidebar-inner-button" onclick="window.location.href='/Deposit'">
+          <i class="fa-solid fa-money-bill-transfer"></i>Deposit
+        </div>
+        <div class="sidebar-inner-button" onclick="window.location.href='/Withdraw'">
+          <i class="fa-solid fa-wallet"></i>Withdraw
+        </div>
+        <div class="sidebar-inner-button" onclick="window.location.href='/ViewTrans'">
+          <i class="fa-solid fa-file"></i>View Transactions
+        </div>
+        <div class="sidebar-inner-button" onclick="window.location.href='/profile'">
+          <i class="fa-solid fa-cog"></i>Profile Settings
         </div>
       </div>
-    </aside>
-      <!-- Main Content -->
+    </div>
+
+    <br><br><br>
+
+    <nav class="sidebar-nav">
+      <a onclick="window.location.href='/'" class="nav-item">
+        <i class="fa-solid fa-house-user"></i> Home</a>
+      <a onclick="window.location.href='/Vote'" class="nav-item">
+        <i class="fa-solid fa-balance-scale"></i> Vote</a>
+      <a onclick="window.location.href='/Tutorial'" class="nav-item">
+        <i class="fa-solid fa-book"></i> Tutorial</a>
+      <a onclick="window.location.href='/help'" class="nav-item">
+        <i class="fa-solid fa-globe"></i> Online</a>
+      <a onclick="window.location.href='/about'" class="nav-item">
+        <i class="fa-solid fa-info-circle"></i> About Us</a>
+      <a onclick="window.location.href='/help'" class="nav-item">
+        <i class="fa-solid fa-compass"></i> Help</a>
+    </nav>
+
+    <div class="share">
+      <p>Share To:</p>
+      <div class="share-icons">
+        <a href="#"><i class="fa-brands fa-telegram"></i></a>
+        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+        <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+      </div>
+    </div>
+  </aside>
+  <!-- Main Content -->
   <main class="main-content">
     <!-- Top bar -->
     <div class="topbar">
       <a class="login-btn" onclick="window.location.href='/login'">LOGIN / REGISTER</a>
     </div>
     <!-- About Us Section -->
-<section class="about-us">
-    <h2><i class="fas fa-bullhorn"></i>FAQ</h2>
-    <p class="intro">
-    <strong>Часто задавані питання:</strong> 
-    </p>
-  
-    <div class="about-features">
+    <section class="about-us">
+      <h2><i class="fas fa-bullhorn"></i>FAQ</h2>
+      <p class="intro">
+        <strong>Часто задавані питання:</strong>
+      </p>
+
+      <div class="about-features">
 
         <div class="feature">
           <a href="#registration">
@@ -146,7 +143,7 @@
             <p>Як створити акаунт, відновити доступ або змінити дані.</p>
           </a>
         </div>
-      
+
         <div class="feature">
           <a href="#deposits">
             <i class="fas fa-coins"></i>
@@ -154,7 +151,7 @@
             <p>Як здійснити депозит чи виведення коштів, доступні методи поповнення рахунку.</p>
           </a>
         </div>
-      
+
         <div class="feature">
           <a href="#security">
             <i class="fas fa-shield-alt"></i>
@@ -162,7 +159,7 @@
             <p>Як забезпечена безпека вашого акаунта, використання двофакторної аутентифікації.</p>
           </a>
         </div>
-      
+
         <div class="feature">
           <a href="#tech">
             <i class="fas fa-user-friends"></i>
@@ -170,7 +167,7 @@
             <p>Проблеми з інтерфейсом, транзакціями або проблеми з акаунтами.</p>
           </a>
         </div>
-      
+
         <div class="feature">
           <a href="#bonus">
             <i class="fas fa-users-cog"></i>
@@ -178,7 +175,7 @@
             <p>Як отримати бонуси, знижки та брати участь у акціях.</p>
           </a>
         </div>
-      
+
         <div class="feature">
           <a href="#payments">
             <i class="fas fa-hand-holding-usd"></i>
@@ -186,173 +183,204 @@
             <p>Огляд доступних методів оплати для депозитів і виведення.</p>
           </a>
         </div>
-      
+
       </div>
-      
-<div>
-     <!-- Black Divider -->
-<div class="black-divider"></div>
 
-<!-- FAQ Block Styled Like Screenshot 1 -->
-<section class="faq-section">
-  <div class="faq-container">
-    <div class="faq-card">
-      <h2><i class="fas fa-info-circle"></i> Чому важливо прочитати FAQ?</h2>
-      <p>
-        Наш FAQ допоможе вам отримати всю необхідну інформацію, щоб максимально ефективно використовувати платформу.
-        Якщо ви новачок у світі DeFi, тут ви знайдете поради по реєстрації та налаштуванню акаунта.
-        Якщо у вас виникли питання з депозитами, безпекою або іншими технічними аспектами, ви також зможете швидко знайти відповіді.
-      </p>
-    </div>
-  </div>
-</section>
-      <!-- Black Divider -->
-<div class="black-divider"></div>
+      <div>
+        <!-- Black Divider -->
+        <div class="black-divider"></div>
 
-<!-- FAQ Block Styled Like Screenshot 2 -->
-<section class="faq-section">
-  <div class="faq-container">
-    <div class="faq-card">
-      <h2><i class="fas fa-info-circle"></i> Що робити, якщо не знайшли відповіді на своє питання?</h2>
-      <p>
-        Якщо ваше питання не було висвітлено в нашій базі знань, не хвилюйтеся! Ви можете звернутися до нашої служби підтримки через чат-бота, email або інші канали зв'язку, і наші фахівці нададуть вам допомогу.
-        Рекомендуємо перевіряти FAQ регулярно, оскільки ми постійно оновлюємо його з новими запитаннями та відповідями, щоб підтримувати актуальність інформації.
-      </p>
-    </div>
-  </div>
-</section>
-     <!-- Black Divider -->
-     <div class="black-divider"></div>
-    <!-- FAQ Block 1 -->
-<section class="faq-section" id="registration">
-  <div class="faq-container">
-    <div class="faq-card">
-      <h2><i class="fas fa-info-circle"></i>Реєстрація та Вхід</h2>
-      <p>
-        <strong>Як створити акаунт на MANA.invest?</strong></p>
-        <p>Щоб створити акаунт на платформі MANA.invest, перейдіть на головну сторінку і натисніть на кнопку "Зареєструватися". Заповніть необхідні поля для створення вашого профілю, підтвердження email та встановлення пароля. Після цього ви отримаєте лист із підтвердженням реєстрації, і зможете увійти в свій акаунт, використовуючи ваші дані для входу.
-         </p> 
-    <br>
-      <p>
-        <strong>Як відновити доступ до акаунта?</strong></p>
-        <p>Якщо ви забули пароль, натисніть на кнопку "Забули пароль?" на сторінці входу. Введіть ваш email, і ми надішлемо вам інструкції для скидання пароля. У разі будь-яких складнощів зверніться до нашої служби підтримки.
-         </p>
-    </div>
-  </div>
-</section>
+        <!-- FAQ Block Styled Like Screenshot 1 -->
+        <section class="faq-section">
+          <div class="faq-container">
+            <div class="faq-card">
+              <h2><i class="fas fa-info-circle"></i> Чому важливо прочитати FAQ?</h2>
+              <p>
+                Наш FAQ допоможе вам отримати всю необхідну інформацію, щоб максимально ефективно використовувати
+                платформу.
+                Якщо ви новачок у світі DeFi, тут ви знайдете поради по реєстрації та налаштуванню акаунта.
+                Якщо у вас виникли питання з депозитами, безпекою або іншими технічними аспектами, ви також зможете
+                швидко знайти відповіді.
+              </p>
+            </div>
+          </div>
+        </section>
+        <!-- Black Divider -->
+        <div class="black-divider"></div>
 
-<div class="black-divider"></div>
+        <!-- FAQ Block Styled Like Screenshot 2 -->
+        <section class="faq-section">
+          <div class="faq-container">
+            <div class="faq-card">
+              <h2><i class="fas fa-info-circle"></i> Що робити, якщо не знайшли відповіді на своє питання?</h2>
+              <p>
+                Якщо ваше питання не було висвітлено в нашій базі знань, не хвилюйтеся! Ви можете звернутися до нашої
+                служби підтримки через чат-бота, email або інші канали зв'язку, і наші фахівці нададуть вам допомогу.
+                Рекомендуємо перевіряти FAQ регулярно, оскільки ми постійно оновлюємо його з новими запитаннями та
+                відповідями, щоб підтримувати актуальність інформації.
+              </p>
+            </div>
+          </div>
+        </section>
+        <!-- Black Divider -->
+        <div class="black-divider"></div>
+        <!-- FAQ Block 1 -->
+        <section class="faq-section" id="registration">
+          <div class="faq-container">
+            <div class="faq-card">
+              <h2><i class="fas fa-info-circle"></i>Реєстрація та Вхід</h2>
+              <p>
+                <strong>Як створити акаунт на MANA.invest?</strong>
+              </p>
+              <p>Щоб створити акаунт на платформі MANA.invest, перейдіть на головну сторінку і натисніть на кнопку
+                "Зареєструватися". Заповніть необхідні поля для створення вашого профілю, підтвердження email та
+                встановлення пароля. Після цього ви отримаєте лист із підтвердженням реєстрації, і зможете увійти в свій
+                акаунт, використовуючи ваші дані для входу.
+              </p>
+              <br>
+              <p>
+                <strong>Як відновити доступ до акаунта?</strong>
+              </p>
+              <p>Якщо ви забули пароль, натисніть на кнопку "Забули пароль?" на сторінці входу. Введіть ваш email, і ми
+                надішлемо вам інструкції для скидання пароля. У разі будь-яких складнощів зверніться до нашої служби
+                підтримки.
+              </p>
+            </div>
+          </div>
+        </section>
 
-<!-- FAQ Block 2 -->
-<section class="faq-section" id="deposits">
-  <div class="faq-container">
-    <div class="faq-card">
-      <h2><i class="fas fa-info-circle"></i> Депозити та виведення коштів</h2>
-      <p>
-      <strong>Як зробити депозит через BSC?</strong></p>
-      <p>Для поповнення вашого акаунта через TRON, вам потрібно виконати кілька простих кроків:
-      Увійдіть в свій акаунт на платформі MANA.invest.</p>
-      <p><strong>1.</strong> Перейдіть до розділу <strong>"Депозит".</strong></p>
-        <p><strong>2.</strong> Виберіть метод поповнення <strong>BEP-20(USDT).</strong></p>
-        <p><strong>3.</strong> Система надасть вам адресу гаманця <strong>BEP-20</strong>, на яку ви повинні надіслати кошти.</p>
-            <p><strong>4.</strong> Скопіюйте адресу або скористайтесь наданим <strong>QR-кодом</strong> для зручності.</p>
-                <p><strong>5.</strong> Після надсилання коштів на вказану адресу, ваша транзакція буде підтверджена, і депозит з'явиться на вашому балансі в найкоротший час.</p>
-                    <p><strong>6.</strong> QR-код для депозиту: <strong>(Згенеруйте QR-код для цієї адреси в реальному проекті)</strong></p>
-                    <br>
-                    <p><strong>Яку мінімальну суму я можу внести через BSC?</strong></p>
-                    <p>Мінімальна сума депозиту через <strong>BEP-20</strong> становить <strong>30 USDT. </strong>Будь ласка, переконайтеся, що ви відправили необхідну кількість для успішного поповнення вашого балансу.</p>
-      
-      </p>
-    </div>
-  </div>
-</section>
+        <div class="black-divider"></div>
 
-<div class="black-divider"></div>
+        <!-- FAQ Block 2 -->
+        <section class="faq-section" id="deposits">
+          <div class="faq-container">
+            <div class="faq-card">
+              <h2><i class="fas fa-info-circle"></i> Депозити та виведення коштів</h2>
+              <p>
+                <strong>Як зробити депозит через BSC?</strong>
+              </p>
+              <p>Для поповнення вашого акаунта через TRON, вам потрібно виконати кілька простих кроків:
+                Увійдіть в свій акаунт на платформі MANA.invest.</p>
+              <p><strong>1.</strong> Перейдіть до розділу <strong>"Депозит".</strong></p>
+              <p><strong>2.</strong> Виберіть метод поповнення <strong>BEP-20(USDT).</strong></p>
+              <p><strong>3.</strong> Система надасть вам адресу гаманця <strong>BEP-20</strong>, на яку ви повинні
+                надіслати кошти.</p>
+              <p><strong>4.</strong> Скопіюйте адресу або скористайтесь наданим <strong>QR-кодом</strong> для зручності.
+              </p>
+              <p><strong>5.</strong> Після надсилання коштів на вказану адресу, ваша транзакція буде підтверджена, і
+                депозит з'явиться на вашому балансі в найкоротший час.</p>
+              <p><strong>6.</strong> QR-код для депозиту: <strong>(Згенеруйте QR-код для цієї адреси в реальному
+                  проекті)</strong></p>
+              <br>
+              <p><strong>Яку мінімальну суму я можу внести через BSC?</strong></p>
+              <p>Мінімальна сума депозиту через <strong>BEP-20</strong> становить <strong>30 USDT. </strong>Будь ласка,
+                переконайтеся, що ви відправили необхідну кількість для успішного поповнення вашого балансу.</p>
 
-<!-- FAQ Block 3 -->
-<section class="faq-section" id="security">
-  <div class="faq-container">
-    <div class="faq-card">
-      <h2><i class="fas fa-info-circle"></i> Безпека та захист коштів</h2>
-      <p>
-        <strong>Як забезпечена безпека моїх коштів?</strong>
-      </p>
-      <p>Платформа <strong>MANA.invest</strong> використовує сучасні протоколи безпеки для захисту вашого акаунта і коштів. Ми рекомендуємо використовувати двофакторну аутентифікацію <strong>(2FA)</strong>, щоб забезпечити додатковий рівень захисту. Крім того, всі ваші транзакції проводяться через надійні блокчейн мережі, що гарантує їх безпечність.</p>
-    <p>
-        <br>
-        <strong>Як включити двофакторну аутентифікацію (2FA)?</strong>
-    </p>
-    <p>Щоб включити <strong>2FA</strong>, зайдіть в розділ <strong>"Налаштування акаунта"</strong> в вашому профілі. Оберіть опцію <strong>"Включити 2FA"</strong> і дотримуйтесь інструкцій на екрані. Ви будете використовувати Google Authenticator або інший додаток для генерації кодів.</p>
-    </div>
-  </div>
-</section>
+              </p>
+            </div>
+          </div>
+        </section>
 
-<div class="black-divider"></div>
+        <div class="black-divider"></div>
 
-<!-- FAQ Block 4 -->
-<section class="faq-section" id="tech">
-  <div class="faq-container">
-    <div class="faq-card">
-      <h2><i class="fas fa-info-circle"></i> Технічні питання</h2>
-      <p>
-        <strong>Моя транзакція не підтверджена, що робити?</strong>
-      </p>
-      <p>Якщо ваша транзакція не підтверджена, перш за все перевірте стан мережі <strong>BSC</strong> Іноді мережа може бути переповнена, і підтвердження транзакцій
-         займає трохи більше часу. Ви можете перевірити статус транзакції за допомогою <strong>BSC Explorer</strong> за вашим <strong>Transaction Hash, TxID</strong>.</p>
-    <p>
-        <br>
-        <strong>Я не можу побачити свої кошти на рахунку, що робити?</strong>
-    </p>
-    <p>Перевірте, чи вказана правильна адреса гаманця. Також переконайтеся, що транзакція була успішно завершена.
-         Якщо все правильно, але кошти все щене з'явилися, будь ласка, надайте транзакційний <strong>ID (TXID)</strong> нашій підтримці для подальшого розслідування.</p>
-        </div>
-  </div>
-</section>
+        <!-- FAQ Block 3 -->
+        <section class="faq-section" id="security">
+          <div class="faq-container">
+            <div class="faq-card">
+              <h2><i class="fas fa-info-circle"></i> Безпека та захист коштів</h2>
+              <p>
+                <strong>Як забезпечена безпека моїх коштів?</strong>
+              </p>
+              <p>Платформа <strong>MANA.invest</strong> використовує сучасні протоколи безпеки для захисту вашого
+                акаунта і коштів. Ми рекомендуємо використовувати двофакторну аутентифікацію <strong>(2FA)</strong>, щоб
+                забезпечити додатковий рівень захисту. Крім того, всі ваші транзакції проводяться через надійні блокчейн
+                мережі, що гарантує їх безпечність.</p>
+              <p>
+                <br>
+                <strong>Як включити двофакторну аутентифікацію (2FA)?</strong>
+              </p>
+              <p>Щоб включити <strong>2FA</strong>, зайдіть в розділ <strong>"Налаштування акаунта"</strong> в вашому
+                профілі. Оберіть опцію <strong>"Включити 2FA"</strong> і дотримуйтесь інструкцій на екрані. Ви будете
+                використовувати Google Authenticator або інший додаток для генерації кодів.</p>
+            </div>
+          </div>
+        </section>
 
-<div class="black-divider"></div>
+        <div class="black-divider"></div>
 
-<!-- FAQ Block 5 -->
-<section class="faq-section" id="bonus">
-  <div class="faq-container">
-    <div class="faq-card">
-      <h2><i class="fas fa-info-circle"></i> Бонуси та акції</h2>
-      <p>
-        <strong>Як отримати бонуси від рефералів?</strong>
-      </p>
-      <p>
-        Платформа <strong>MANA.invest</strong> пропонує бонуси за залучення нових користувачів через реферальну програму. Для отримання бонусів необхідно поділитися вашим реферальним посиланням, яке можна знайти
-         в розділі <strong>"Мій профіль"</strong>.Кожен новий користувач, що зареєструється за вашим посиланням і зробить депозит, дасть вам <strong>бонус</strong>.
-      </p>
-    </div>
-  </div>
-</section>
+        <!-- FAQ Block 4 -->
+        <section class="faq-section" id="tech">
+          <div class="faq-container">
+            <div class="faq-card">
+              <h2><i class="fas fa-info-circle"></i> Технічні питання</h2>
+              <p>
+                <strong>Моя транзакція не підтверджена, що робити?</strong>
+              </p>
+              <p>Якщо ваша транзакція не підтверджена, перш за все перевірте стан мережі <strong>BSC</strong> Іноді
+                мережа може бути переповнена, і підтвердження транзакцій
+                займає трохи більше часу. Ви можете перевірити статус транзакції за допомогою <strong>BSC
+                  Explorer</strong> за вашим <strong>Transaction Hash, TxID</strong>.</p>
+              <p>
+                <br>
+                <strong>Я не можу побачити свої кошти на рахунку, що робити?</strong>
+              </p>
+              <p>Перевірте, чи вказана правильна адреса гаманця. Також переконайтеся, що транзакція була успішно
+                завершена.
+                Якщо все правильно, але кошти все щене з'явилися, будь ласка, надайте транзакційний <strong>ID
+                  (TXID)</strong> нашій підтримці для подальшого розслідування.</p>
+            </div>
+          </div>
+        </section>
 
-<div class="black-divider"></div>
+        <div class="black-divider"></div>
 
-<!-- FAQ Block 6 -->
-<section class="faq-section" id="payments">
-  <div class="faq-container">
-    <div class="faq-card">
-      <h2><i class="fas fa-info-circle"></i> Платіжні методи</h2>
-      <p>
-        <strong>Як здійснити депозит за допомогою BEP-20 (USDT)?</strong>
-      </p>
-      <p>Щоб поповнити свій акаунт через <strong>BEP-20</strong>, перейдіть до розділу <strong>"Депозит"</strong> і оберіть метод поповнення BSC. Вам буде надано адресу для депозиту,
-         а також <strong>QR-код</strong> для швидкої оплати. Просто відправте <strong>USDT</strong> на зазначену адресу, і ваш депозит буде зарахований на рахунок.</p>
-         <br>
-         <p>
-            <strong>Адреса BSC для депозиту:</strong>
-         </p>
-         <p>
-            <strong>BSC-Адреса: </strong>  0x[40 шістнадцяткових символів]
-         </p>
-         <p>
-             або створіть <strong>QR-код</strong> для депозиту
-         </p>
-    </div>
-  </div>
-</section>
- <script src="script.js"></script>
- <script src="../saidbar-using/saidbar-using.js"></script>
-    </body>
-    </html>
+        <!-- FAQ Block 5 -->
+        <section class="faq-section" id="bonus">
+          <div class="faq-container">
+            <div class="faq-card">
+              <h2><i class="fas fa-info-circle"></i> Бонуси та акції</h2>
+              <p>
+                <strong>Як отримати бонуси від рефералів?</strong>
+              </p>
+              <p>
+                Платформа <strong>MANA.invest</strong> пропонує бонуси за залучення нових користувачів через реферальну
+                програму. Для отримання бонусів необхідно поділитися вашим реферальним посиланням, яке можна знайти
+                в розділі <strong>"Мій профіль"</strong>.Кожен новий користувач, що зареєструється за вашим посиланням і
+                зробить депозит, дасть вам <strong>бонус</strong>.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <div class="black-divider"></div>
+
+        <!-- FAQ Block 6 -->
+        <section class="faq-section" id="payments">
+          <div class="faq-container">
+            <div class="faq-card">
+              <h2><i class="fas fa-info-circle"></i> Платіжні методи</h2>
+              <p>
+                <strong>Як здійснити депозит за допомогою BEP-20 (USDT)?</strong>
+              </p>
+              <p>Щоб поповнити свій акаунт через <strong>BEP-20</strong>, перейдіть до розділу
+                <strong>"Депозит"</strong> і оберіть метод поповнення BSC. Вам буде надано адресу для депозиту,
+                а також <strong>QR-код</strong> для швидкої оплати. Просто відправте <strong>USDT</strong> на зазначену
+                адресу, і ваш депозит буде зарахований на рахунок.</p>
+              <br>
+              <p>
+                <strong>Адреса BSC для депозиту:</strong>
+              </p>
+              <p>
+                <strong>BSC-Адреса: </strong> 0x[40 шістнадцяткових символів]
+              </p>
+              <p>
+                або створіть <strong>QR-код</strong> для депозиту
+              </p>
+            </div>
+          </div>
+        </section>
+        <script src="script.js"></script>
+        <script src="../saidbar-using/saidbar-using.js"></script>
+</body>
+
+</html>

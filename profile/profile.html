@@ -61,9 +61,8 @@
     <nav class="sidebar-nav">
       <a onclick="window.location.href='/'" class="nav-item">
         <i class="fa-solid fa-house-user"></i> Home</a>
-        <a onclick="window.location.href='/'" class="nav-item">
-          <i class="fa-solid fa-balance-scale"></i> Vote</a
-        >
+      <a onclick="window.location.href='/Vote'" class="nav-item">
+        <i class="fa-solid fa-balance-scale"></i> Vote</a>
       <a onclick="window.location.href='/Tutorial'" class="nav-item">
         <i class="fa-solid fa-book"></i> Tutorial</a>
       <a onclick="window.location.href='/help'" class="nav-item">
@@ -137,8 +136,8 @@
             <!-- Блок верифікації -->
             <div id="account-status">Status: Loading...</div>
             <div id="verification-status" style="display: none;">
-                <p>Ваш email не верифіковано. Натисніть кнопку нижче, щоб отримати посилання для верифікації.</p>
-                <button id="resend-verification">Resend Verification Email</button>
+              <p>Ваш email не верифіковано. Натисніть кнопку нижче, щоб отримати посилання для верифікації.</p>
+              <button id="resend-verification">Resend Verification Email</button>
             </div>
 
           </div>
@@ -158,7 +157,7 @@
             <span>TEAM COMMISSION</span>
             <span>0.00</span>
           </div>
-         
+
         </div>
 
 
@@ -168,17 +167,17 @@
           <div id="referralCountLevel1"></div>
           <div id="referralCountLevel2"></div>
           <div id="referralCountLevel3"></div>
-          
+
           <div id="referralList"></div>
 
-          </div>
         </div>
-
-        <div class="logout" onclick="logout()">LOGOUT</div>
       </div>
 
-      <script src="../saidbar-using/saidbar-using.js"></script>
-      <script src="profile.js"></script>
+      <div class="logout" onclick="logout()">LOGOUT</div>
+    </div>
+
+    <script src="../saidbar-using/saidbar-using.js"></script>
+    <script src="profile.js"></script>
 </body>
 
 </html>

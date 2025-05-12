@@ -1,198 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BCS Withdraw</title>
-    <link rel="stylesheet" href="../Withdraw/withdraw.css" />
-    <link rel="stylesheet" href="../saidbar-using/saidbar-using.css" />
-    <!-- Font Awesome CDN -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap"
-      rel="stylesheet"
-    />
-    <style></style>
-  </head>
-  <body>
-    <aside class="sidebar main-sidebar">
-      <div class="logo">
-        <div class="sidebar-wrapper">
-          <div class="logo-container">
-            <img
-              src="../Home/img/photo_2025-04-11_23-16-24.jpg"
-              class="logo-icon"
-              alt="logo"
-            />
-            <div class="logo-text">
-              <h1>
-                <span class="brand">MANA</span><span class="dot">.</span
-                ><span class="invest">invest</span>
-              </h1>
-              <p class="link">WWW.MANA.WORLD</p>
-            </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BCS Withdraw</title>
+  <link rel="stylesheet" href="../Withdraw/withdraw.css" />
+  <link rel="stylesheet" href="../saidbar-using/saidbar-using.css" />
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+  <style></style>
+</head>
+
+<body>
+  <aside class="sidebar main-sidebar">
+    <div class="logo">
+      <div class="sidebar-wrapper">
+        <div class="logo-container">
+          <img src="../Home/img/photo_2025-04-11_23-16-24.jpg" class="logo-icon" alt="logo" />
+          <div class="logo-text">
+            <h1>
+              <span class="brand">MANA</span><span class="dot">.</span><span class="invest">invest</span>
+            </h1>
+            <p class="link">WWW.MANA.WORLD</p>
           </div>
         </div>
-      </div>
-
-      <div class="user-panel">
-        <div class="user-info">
-          <i class="far fa-user-circle"></i>
-
-          <p id="user"></p>
-        </div>
-
-        <div class="wallet-info">
-          <p><strong>Balance:</strong> <span id="balance">$1000</span></p>
-        </div>
-
-        <div class="sidebar-inner">
-          <div
-            class="sidebar-inner-button"
-            onclick="window.location.href='/Deposit'"
-          >
-            <i class="fa-solid fa-money-bill-transfer"></i>Deposit
-          </div>
-          <div
-            class="sidebar-inner-button"
-            onclick="window.location.href='/Withdraw'"
-          >
-            <i class="fa-solid fa-wallet"></i>Withdraw
-          </div>
-          <div
-            class="sidebar-inner-button"
-            onclick="window.location.href='/ViewTrans'"
-          >
-            <i class="fa-solid fa-file"></i>View Transactions
-          </div>
-          <div
-            class="sidebar-inner-button"
-            onclick="window.location.href='/profile'"
-          >
-            <i class="fa-solid fa-cog"></i>Profile Settings
-          </div>
-        </div>
-      </div>
-      <br /><br /><br />
-
-      <nav class="sidebar-nav">
-        <a onclick="window.location.href='/'" class="nav-item">
-          <i class="fa-solid fa-house-user"></i> Home</a
-        >
-        <a onclick="window.location.href='/'" class="nav-item">
-          <i class="fa-solid fa-balance-scale"></i> Vote</a
-        >
-        <a onclick="window.location.href='/help'" class="nav-item">
-          <i class="fa-solid fa-book"></i> Tutorial</a
-        >
-        <a onclick="window.location.href='/help'" class="nav-item">
-          <i class="fa-solid fa-globe"></i> Online</a
-        >
-        <a onclick="window.location.href='/about'" class="nav-item">
-          <i class="fa-solid fa-info-circle"></i> About Us</a
-        >
-        <a onclick="window.location.href='/help'" class="nav-item">
-          <i class="fa-solid fa-compass"></i> Help</a
-        >
-      </nav>
-
-      <div class="share">
-        <p>Share To:</p>
-        <div class="share-icons">
-          <a href="#"><i class="fa-brands fa-telegram"></i></a>
-          <a href="#"><i class="fa-brands fa-youtube"></i></a>
-          <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
-        </div>
-      </div>
-    </aside>
-    <div class="container">
-      <!-- Пояснення про виведення в BCS -->
-      <div class="section">
-        <h2>
-          <i class="fa-solid fa-angle-double-down"></i>What is a BCS Withdrawal?
-        </h2>
-        <p>
-          Ready to take your crypto out of the
-          <span class="highlight">BCS network</span>? A BCS withdrawal is like
-          opening your futuristic piggy bank and sending your coins to your
-          personal wallet! It’s a quick and secure way to transfer your funds
-          back to your own BSC address, so you can use them anywhere in the
-          crypto universe. Let’s get started!
-        </p>
-      </div>
-
-      <!-- Контейнер для виведення коштів -->
-      <div class="section">
-        <h2>
-          <i class="fa-solid fa-money-bill-transfer"></i>Withdraw Your Funds
-        </h2>
-        <div class="withdraw-form-container" id="withdrawFormContainer">
-          <div class="withdraw-form">
-            <input
-              type="text"
-              id="bscAddress"
-              placeholder="Enter your BSC address"
-              required
-            />
-            <input
-              type="number"
-              id="withdrawAmount"
-              placeholder="Enter amount to withdraw (min. 10 USDT)"
-              step="10"
-              required
-            />
-          </div>
-        </div>
-        <button
-          class="withdraw-btn"
-          id="withdrawButton"
-          onclick="submitWithdrawal()"
-        >
-          Withdraw
-        </button>
-        <div class="success-message" id="successMessage">
-          Your request has been received and is under review.
-        </div>
-      </div>
-
-      <!-- Інструкція для користувача -->
-      <div class="section">
-        <h2>
-          <i class="fa-solid fa-graduation-cap"></i>How to Withdraw in BCS
-          Network?
-        </h2>
-        <ol>
-          <li>
-            Enter your <span class="highlight">BSC address</span> in the field
-            above (make sure it’s correct!).
-          </li>
-          <li>
-            Specify the <span class="highlight">amount</span> you want to
-            withdraw (e.g., 0.5 BNB).
-          </li>
-          <li>
-            Click the <span class="highlight">"Withdraw"</span> button to submit
-            your request.
-          </li>
-          <li>
-            Wait for the confirmation message:
-            <span class="highlight"
-              >"Your request has been received and is under review."</span
-            >.
-          </li>
-          <li>
-            Our team will review your request, and the funds will be sent to
-            your BSC address (this usually takes 1-3 business days).
-          </li>
-          <li>Check your wallet to confirm the funds have arrived!</li>
-        </ol>
       </div>
     </div>
 
-    <script src="../Withdraw/withdraw.js"></script>
-    <script type="module" src="../saidbar-using/saidbar-using.js"></script>
-  </body>
+    <div class="user-panel">
+      <div class="user-info">
+        <i class="far fa-user-circle"></i>
+
+        <p id="user"></p>
+      </div>
+
+      <div class="wallet-info">
+        <p><strong>Balance:</strong> <span id="balance">$1000</span></p>
+      </div>
+
+      <div class="sidebar-inner">
+        <div class="sidebar-inner-button" onclick="window.location.href='/Deposit'">
+          <i class="fa-solid fa-money-bill-transfer"></i>Deposit
+        </div>
+        <div class="sidebar-inner-button" onclick="window.location.href='/Withdraw'">
+          <i class="fa-solid fa-wallet"></i>Withdraw
+        </div>
+        <div class="sidebar-inner-button" onclick="window.location.href='/ViewTrans'">
+          <i class="fa-solid fa-file"></i>View Transactions
+        </div>
+        <div class="sidebar-inner-button" onclick="window.location.href='/profile'">
+          <i class="fa-solid fa-cog"></i>Profile Settings
+        </div>
+      </div>
+    </div>
+    <br /><br /><br />
+
+    <nav class="sidebar-nav">
+      <a onclick="window.location.href='/'" class="nav-item">
+        <i class="fa-solid fa-house-user"></i> Home</a>
+      <a onclick="window.location.href='/Vote'" class="nav-item">
+        <i class="fa-solid fa-balance-scale"></i> Vote</a>
+      <a onclick="window.location.href='/help'" class="nav-item">
+        <i class="fa-solid fa-book"></i> Tutorial</a>
+      <a onclick="window.location.href='/help'" class="nav-item">
+        <i class="fa-solid fa-globe"></i> Online</a>
+      <a onclick="window.location.href='/about'" class="nav-item">
+        <i class="fa-solid fa-info-circle"></i> About Us</a>
+      <a onclick="window.location.href='/help'" class="nav-item">
+        <i class="fa-solid fa-compass"></i> Help</a>
+    </nav>
+
+    <div class="share">
+      <p>Share To:</p>
+      <div class="share-icons">
+        <a href="#"><i class="fa-brands fa-telegram"></i></a>
+        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+        <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+      </div>
+    </div>
+  </aside>
+  <div class="container">
+    <!-- Пояснення про виведення в BCS -->
+    <div class="section">
+      <h2>
+        <i class="fa-solid fa-angle-double-down"></i>What is a BCS Withdrawal?
+      </h2>
+      <p>
+        Ready to take your crypto out of the
+        <span class="highlight">BCS network</span>? A BCS withdrawal is like
+        opening your futuristic piggy bank and sending your coins to your
+        personal wallet! It’s a quick and secure way to transfer your funds
+        back to your own BSC address, so you can use them anywhere in the
+        crypto universe. Let’s get started!
+      </p>
+    </div>
+
+    <!-- Контейнер для виведення коштів -->
+    <div class="section">
+      <h2>
+        <i class="fa-solid fa-money-bill-transfer"></i>Withdraw Your Funds
+      </h2>
+      <div class="withdraw-form-container" id="withdrawFormContainer">
+        <div class="withdraw-form">
+          <input type="text" id="bscAddress" placeholder="Enter your BSC address" required />
+          <input type="number" id="withdrawAmount" placeholder="Enter amount to withdraw (min. 10 USDT)" step="10"
+            required />
+        </div>
+      </div>
+      <button class="withdraw-btn" id="withdrawButton" onclick="submitWithdrawal()">
+        Withdraw
+      </button>
+      <div class="success-message" id="successMessage">
+        Your request has been received and is under review.
+      </div>
+    </div>
+
+    <!-- Інструкція для користувача -->
+    <div class="section">
+      <h2>
+        <i class="fa-solid fa-graduation-cap"></i>How to Withdraw in BCS
+        Network?
+      </h2>
+      <ol>
+        <li>
+          Enter your <span class="highlight">BSC address</span> in the field
+          above (make sure it’s correct!).
+        </li>
+        <li>
+          Specify the <span class="highlight">amount</span> you want to
+          withdraw (e.g., 0.5 BNB).
+        </li>
+        <li>
+          Click the <span class="highlight">"Withdraw"</span> button to submit
+          your request.
+        </li>
+        <li>
+          Wait for the confirmation message:
+          <span class="highlight">"Your request has been received and is under review."</span>.
+        </li>
+        <li>
+          Our team will review your request, and the funds will be sent to
+          your BSC address (this usually takes 1-3 business days).
+        </li>
+        <li>Check your wallet to confirm the funds have arrived!</li>
+      </ol>
+    </div>
+  </div>
+
+  <script src="../Withdraw/withdraw.js"></script>
+  <script type="module" src="../saidbar-using/saidbar-using.js"></script>
+</body>
+
 </html>
