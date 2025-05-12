@@ -165,14 +165,12 @@ body {
   width: 60px;
   height: 60px;
   display: flex;
-<<<<<<< HEAD
   justify-content: center;
   align-items: center;
-=======
   align-items: center;
   justify-content: center;
->>>>>>> 2e503afc37c508f38e8ca8c46331d2e7e130cf21
 }
+
 .referral-list {
   display: flex;
   flex-wrap: wrap;
@@ -237,3 +235,61 @@ body {
   margin-bottom: 15px;
   color: #32bce3;
 }
+
+h3 {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+#account-status {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+p {
+  margin: 5px 0;
+}
+
+#verification-status {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 10px;
+}
+
+#verification-message {
+  font-size: 0.9rem;
+  color: #ffcc00; /* Золотистий для виділення повідомлення */
+  margin-bottom: 8px;
+}
+
+#resend-verification {
+  background-color: #4CAF50; /* Зеленуватий колір кнопки */
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 5px;
+}
+
+#resend-verification:hover {
+  background-color: #27732b; /* Темніший зелений при наведенні */
+}
+#referralList {
+  max-height: 250px; /* Максимальна висота для списку рефералів */
+  overflow-y: auto;   /* Додає вертикальний скрол, якщо контент вміщається більше */
+  padding: 10px;
+}
+
+#referralList div {
+  margin-bottom: 20px; /* Відступ між рівнями */
+}
+#referralList::-webkit-scrollbar {
+  width: 0;  /* Це приховає скрол-плашку */
+  height: 0;
+}
+

@@ -749,21 +749,98 @@ app.get('/my-referrals', (req, res) => {
     const decoded = jwt.verify(token, secretKey);
     const userId = decoded.id;
 
-    const query = 'SELECT u.email FROM users u JOIN user_referrals ur ON u.id = ur.referred_id WHERE ur.referrer_id = ?';
-    db.query(query, [userId], (err, results) => {
-      if (err) return res.status(500).json({ error: 'Помилка бази даних' });
-      
-      const referrals = results.map(r => ({
-        nickname: r.email.split('@')[0].slice(0, 6)
-      }));
+    console.log('🔑 Отримано userId з токена:', userId);
 
-      res.json(referrals);
+    const level1Query = `
+      SELECT u.id, u.email FROM user_referrals ur
+      JOIN users u ON ur.referred_id = u.id
+      WHERE ur.referrer_id = ?
+    `;
+
+    db.query(level1Query, [userId], (err, level1Results) => {
+      if (err) {
+        console.error('❌ DB помилка (рівень 1):', err);
+        return res.status(500).json({ error: 'DB помилка (рівень 1)' });
+      }
+
+      console.log('📦 Рівень 1:', level1Results);
+
+      const level1Ids = level1Results.map(r => r.id);
+      const level1Emails = level1Results.map(r => r.email.split('@')[0].slice(0, 6));
+
+      if (level1Ids.length === 0) {
+        return res.json({
+          totalReferrals: 0,
+          level1: [],
+          level2: [],
+          level3: []
+        });
+      }
+
+      const level2Query = `
+        SELECT u.id, u.email FROM user_referrals ur
+        JOIN users u ON ur.referred_id = u.id
+        WHERE ur.referrer_id IN (?)
+      `;
+
+      db.query(level2Query, [level1Ids], (err, level2Results) => {
+        if (err) {
+          console.error('❌ DB помилка (рівень 2):', err);
+          return res.status(500).json({ error: 'DB помилка (рівень 2)' });
+        }
+
+        console.log('📦 Рівень 2:', level2Results);
+
+        const level2Ids = level2Results.map(r => r.id);
+        const level2Emails = level2Results.map(r => r.email.split('@')[0].slice(0, 6));
+
+        if (level2Ids.length === 0) {
+          return res.json({
+            totalReferrals: level1Ids.length,
+            level1: level1Emails,
+            level2: [],
+            level3: []
+          });
+        }
+
+        const level3Query = `
+          SELECT u.email FROM user_referrals ur
+          JOIN users u ON ur.referred_id = u.id
+          WHERE ur.referrer_id IN (?)
+        `;
+
+        db.query(level3Query, [level2Ids], (err, level3Results) => {
+          if (err) {
+            console.error('❌ DB помилка (рівень 3):', err);
+            return res.status(500).json({ error: 'DB помилка (рівень 3)' });
+          }
+
+          console.log('📦 Рівень 3:', level3Results);
+
+          const level3Emails = level3Results.map(r => r.email.split('@')[0].slice(0, 6));
+
+          const totalReferrals =
+            level1Emails.length +
+            level2Emails.length +
+            level3Emails.length;
+
+          res.json({
+            totalReferrals,
+            level1: level1Emails,
+            level2: level2Emails,
+            level3: level3Emails
+          });
+        });
+      });
     });
-
   } catch (err) {
+    console.error('❌ JWT помилка:', err);
     return res.status(401).json({ error: 'Невірний токен' });
   }
 });
+
+
+
 // Окремо оголошена функція для шифрування
 const key = Buffer.from(process.env.encryptionKey, 'hex'); // Шифрування через ваш ключ
 
@@ -830,6 +907,11 @@ app.post('/generate-address', async (req, res) => {
     res.status(401).json({ error: 'Invalid or expired token' });
   }
 });
+
+
+
+
+
 // Стартуємо сервер
 https.createServer(credentials, app).listen(3000, () => {
   console.log("HTTPS сервер працює на https://localhost:3000");
