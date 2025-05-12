@@ -114,31 +114,40 @@ html {
   font-weight: bold;
   font-size: 18px;
   white-space: nowrap;
-  transition: 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.5s ease;
   z-index: 1;
   position: relative;
   border: none;
   cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Початкова тінь */
+  animation: pulse 2s infinite; /* Додаємо пульсацію */
 }
+
 .mini-signup-btn:hover {
-  background: linear-gradient(to right, #7a1fd1, #00b0e5);
+  transform: scale(1.05); /* Збільшення на 5% */
+  box-shadow: 0 6px 20px rgba(0, 198, 255, 0.5); /* Посилена тінь при наведенні */
+  background: linear-gradient(to right, #7a1fd1, #00b0e5); /* Зміна градієнта */
+  animation: none; /* Відключаємо пульсацію при наведенні */
 }
+
+/* Анімація пульсації */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 .mini-signup-btn.disabled {
   background: rgba(102, 102, 102, 0.7); /* Сірий напівпрозорий фон */
   cursor: not-allowed;
-}
-.lock-icon {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 24px;
-  color: #fff;
-  z-index: 2;
-  display: none;
-}
-.mini-signup-btn.disabled .lock-icon {
-  display: block;
+  box-shadow: none; /* Прибираємо тінь для відключеної кнопки */
+  animation: none; /* Відключаємо пульсацію для відключеної кнопки */
 }
 .agent-category-container {
   display: flex;
@@ -171,12 +180,24 @@ html {
   padding: 10px;
   text-align: center;
   background: linear-gradient(to right, #000000, #321eb6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.5s ease; /* Додаємо плавний перехід для аністацій */
+}
+
+.agent:hover {
+  transform: scale(1.05) translateY(-5px); /* Збільшення та підйом */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Додаємо тінь для ефекту "підйому" */
+  background: linear-gradient(to right, #321eb6, #000000); /* Змінюємо напрямок градієнта */
 }
 
 .agent img {
   width: 100%;
   height: auto;
   border-radius: 8px;
+  transition: transform 0.3s ease; /* Плавний перехід для зображення */
+}
+
+.agent:hover img {
+  transform: rotate(3deg) scale(0.95); /* Зменшуємо обертання до 3 градусів і додаємо зменшення до 95% */
 }
 
 .agent ul {

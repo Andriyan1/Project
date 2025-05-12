@@ -99,6 +99,50 @@ body {
   font-weight: bold;
   color: #ff48c4;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  transition: transform 0.6s ease, color 0.3s ease; /* Плавний перехід для обертання та кольору */
+  position: relative;
+  animation: pulse 2s infinite; /* Додаємо пульсацію */
+}
+
+.vs-icon:hover {
+  transform: rotate(360deg); /* Повне обертання на 360 градусів */
+  color: #00c6ff; /* Зміна кольору при наведенні */
+  text-shadow: 0 0 10px #00c6ff, 0 0 20px #ff48c4; /* Додаємо ефект мерехтіння */
+  animation: none; /* Відключаємо пульсацію при наведенні */
+}
+
+/* Анімація пульсації */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Анімація мерехтіння градієнта (опціонально) */
+@keyframes glow {
+  0% {
+    color: #ff48c4;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  50% {
+    color: #00c6ff;
+    text-shadow: 0 0 15px #00c6ff, 0 0 25px #ff48c4;
+  }
+  100% {
+    color: #ff48c4;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+}
+
+/* Застосовуємо анімацію мерехтіння до тексту за замовчуванням */
+.vs-icon {
+  animation: glow 4s infinite;
 }
 .timer-container {
   margin-top: 30px;
