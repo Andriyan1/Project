@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BCS Withdraw</title>
-    <link rel="stylesheet" href="../Withdraw/withdraw.css" />
+    <title>Project Voting</title>
+    <link rel="stylesheet" href="../Vote/Vote.css" />
     <link rel="stylesheet" href="../saidbar-using/saidbar-using.css" />
     <!-- Font Awesome CDN -->
     <link
@@ -15,7 +15,6 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap"
       rel="stylesheet"
     />
-    <style></style>
   </head>
   <body>
     <aside class="sidebar main-sidebar">
@@ -76,6 +75,7 @@
           </div>
         </div>
       </div>
+
       <br /><br /><br />
 
       <nav class="sidebar-nav">
@@ -108,91 +108,59 @@
         </div>
       </div>
     </aside>
-    <div class="container">
-      <!-- Пояснення про виведення в BCS -->
-      <div class="section">
-        <h2>
-          <i class="fa-solid fa-angle-double-down"></i>What is a BCS Withdrawal?
-        </h2>
+    <!-- Контейнер із зображенням на всю ширину -->
+    <div class="header-image">
+      <img src="../Home/img/baner1.jpg" alt="Header Background" />
+    </div>
+    <div class="projects-container">
+      <!-- Перший проект -->
+      <div class="project">
+        <img src="../Home/img/Gold.jpg" alt="EcoSphere Medal" />
+        <h2>EcoSphere</h2>
         <p>
-          Ready to take your crypto out of the
-          <span class="highlight">BCS network</span>? A BCS withdrawal is like
-          opening your futuristic piggy bank and sending your coins to your
-          personal wallet! It’s a quick and secure way to transfer your funds
-          back to your own BSC address, so you can use them anywhere in the
-          crypto universe. Let’s get started!
+          An innovative platform to promote sustainable living through
+          AI-powered waste management solutions.
         </p>
+        <div class="vote-count" id="ecoSphereVotes">Votes: 0</div>
+        <button class="vote-btn" onclick="vote('EcoSphere')">Vote Now</button>
       </div>
 
-      <!-- Контейнер для виведення коштів -->
-      <div class="section">
-        <h2>
-          <i class="fa-solid fa-money-bill-transfer"></i>Withdraw Your Funds
-        </h2>
-        <div class="withdraw-form-container" id="withdrawFormContainer">
-          <div class="withdraw-form">
-            <input
-              type="text"
-              id="bscAddress"
-              placeholder="Enter your BSC address"
-              required
-            />
-            <input
-              type="number"
-              id="withdrawAmount"
-              placeholder="Enter amount to withdraw (min. 10 USDT)"
-              step="10"
-              required
-            />
-          </div>
-        </div>
-        <button
-          class="withdraw-btn"
-          id="withdrawButton"
-          onclick="submitWithdrawal()"
-        >
-          Withdraw
-        </button>
-        <div class="success-message" id="successMessage">
-          Your request has been received and is under review.
-        </div>
-      </div>
+      <!-- Іконка VS -->
+      <div class="vs-icon">VS</div>
 
-      <!-- Інструкція для користувача -->
-      <div class="section">
-        <h2>
-          <i class="fa-solid fa-graduation-cap"></i>How to Withdraw in BCS
-          Network?
-        </h2>
-        <ol>
-          <li>
-            Enter your <span class="highlight">BSC address</span> in the field
-            above (make sure it’s correct!).
-          </li>
-          <li>
-            Specify the <span class="highlight">amount</span> you want to
-            withdraw (e.g., 0.5 BNB).
-          </li>
-          <li>
-            Click the <span class="highlight">"Withdraw"</span> button to submit
-            your request.
-          </li>
-          <li>
-            Wait for the confirmation message:
-            <span class="highlight"
-              >"Your request has been received and is under review."</span
-            >.
-          </li>
-          <li>
-            Our team will review your request, and the funds will be sent to
-            your BSC address (this usually takes 1-3 business days).
-          </li>
-          <li>Check your wallet to confirm the funds have arrived!</li>
-        </ol>
+      <!-- Другий проект -->
+      <div class="project">
+        <img src="../Home/img/diamond.jpg" alt="StarLink Medal" />
+        <h2>StarLink</h2>
+        <p>
+          A futuristic app connecting space enthusiasts with real-time
+          astronomical data and virtual stargazing.
+        </p>
+        <div class="vote-count" id="starLinkVotes">Votes: 0</div>
+        <button class="vote-btn" onclick="vote('StarLink')">Vote Now</button>
       </div>
     </div>
 
-    <script src="../Withdraw/withdraw.js"></script>
+    <!-- Таймер -->
+    <div class="timer-container">
+      <h3>Time Left to Vote</h3>
+      <div class="timer" id="timer">06:00:00</div>
+    </div>
+    <!-- Опис голосування -->
+    <div class="description-container">
+      <p>
+        Voting is a process where you help decide which project earns our
+        community awards by casting your vote. By participating, you support
+        innovative ideas and contribute to their growth. After each voting round
+        ends, all voters receive rewards in the form of a percentage added to
+        their balance. Those who vote for the winning project will receive a
+        higher reward percentage compared to those who supported the losing
+        project.
+      </p>
+    </div>
+
+    <script src="../client/login-reg3.js"></script>
+    <script src="Vote.js"></script>
     <script type="module" src="../saidbar-using/saidbar-using.js"></script>
   </body>
 </html>
